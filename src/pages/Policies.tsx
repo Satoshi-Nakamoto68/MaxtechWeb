@@ -22,7 +22,7 @@ const policies = [
     title: "Terms of Service",
     icon: FileText,
     color: "cyan",
-    lastUpdated: "2025-01-01",
+    lastUpdated: "2026-01-01",
     sections: [
       {
         heading: "1. Agreement to Terms",
@@ -30,7 +30,7 @@ const policies = [
       },
       {
         heading: "2. Company Information",
-        content: "Maxtech Import and Export Limited is a Hong Kong registered company established in 2025. We specialize in import and export services for fashion, technology, and innovative solutions.",
+        content: "Maxtech Import and Export Limited is a Hong Kong registered company established in 2026. We specialize in import and export services for fashion, technology, and innovative solutions.",
       },
       {
         heading: "3. Services Provided",
@@ -55,7 +55,7 @@ const policies = [
     title: "Privacy Policy",
     icon: Shield,
     color: "purple",
-    lastUpdated: "2025-01-01",
+    lastUpdated: "2026-01-01",
     sections: [
       {
         heading: "1. Information We Collect",
@@ -88,7 +88,7 @@ const policies = [
     title: "Return & Refund Policy",
     icon: Package,
     color: "blue",
-    lastUpdated: "2025-01-01",
+    lastUpdated: "2026-01-01",
     sections: [
       {
         heading: "1. Return Eligibility",
@@ -121,7 +121,7 @@ const policies = [
     title: "Shipping Policy",
     icon: Truck,
     color: "pink",
-    lastUpdated: "2025-01-01",
+    lastUpdated: "2026-01-01",
     sections: [
       {
         heading: "1. Shipping Methods",
@@ -154,7 +154,7 @@ const policies = [
     title: "Quality Assurance Policy",
     icon: CheckCircle2,
     color: "cyan",
-    lastUpdated: "2025-01-01",
+    lastUpdated: "2026-01-01",
     sections: [
       {
         heading: "1. Quality Standards",
@@ -187,7 +187,7 @@ const policies = [
     title: "Data Protection Policy",
     icon: Lock,
     color: "purple",
-    lastUpdated: "2025-01-01",
+    lastUpdated: "2026-01-01",
     sections: [
       {
         heading: "1. Data Protection Principles",

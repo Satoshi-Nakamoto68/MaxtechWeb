@@ -14,6 +14,7 @@ import {
   Twitter,
   Clock,
   ChevronRight,
+  FileText,
 } from "lucide-react";
 
 const Footer = () => {
@@ -106,7 +107,7 @@ const Footer = () => {
                 
                 <Sparkles className="h-4 w-4 text-cyan-400 relative z-10 animate-sparkle" />
                 <span className="relative z-10 bg-gradient-to-r from-cyan-300 via-white to-purple-300 bg-clip-text text-transparent">
-                  Established 2025
+                  Established 2026
                 </span>
                 <Clock className="h-4 w-4 text-purple-400 relative z-10 animate-sparkle" />
               </div>
@@ -122,6 +123,13 @@ const Footer = () => {
               </div>
 
               <div className="flex flex-wrap gap-4 relative z-10">
+                <div className="group/badge inline-flex items-center gap-2 rounded-2xl border border-emerald-400/30 bg-slate-900/80 backdrop-blur-xl px-4 py-2 text-sm font-bold text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:border-emerald-400/60 hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] transition-all duration-300">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-emerald-500/20 to-emerald-500/0 opacity-0 group-hover/badge:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                  
+                  <FileText className="h-4 w-4 relative z-10 group-hover/badge:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
+                  <span className="relative z-10 text-xs">Reg: 79695478-000-01-26-4</span>
+                </div>
                 <div className="group/badge inline-flex items-center gap-2 rounded-2xl border border-cyan-400/30 bg-slate-900/80 backdrop-blur-xl px-4 py-2 text-sm font-bold text-cyan-300 shadow-[0_0_15px_rgba(56,189,248,0.3)] hover:border-cyan-400/60 hover:shadow-[0_0_25px_rgba(56,189,248,0.5)] transition-all duration-300">
                   {/* Glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/20 to-cyan-500/0 opacity-0 group-hover/badge:opacity-100 transition-opacity duration-300 rounded-2xl" />
@@ -268,30 +276,58 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="space-y-4 text-sm">
-                  <div className="group/item flex gap-3 cursor-default">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-cyan-400/30 bg-slate-900/80 backdrop-blur-xl text-cyan-400 shadow-[0_0_15px_rgba(56,189,248,0.2)] group-hover/item:border-cyan-400/60 group-hover/item:shadow-[0_0_25px_rgba(56,189,248,0.4)] transition-all duration-300 pointer-events-none">
-                      <MapPin className="h-4 w-4 group-hover/item:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)]" />
+                  <a 
+                    href="https://maps.google.com/?q=Unit+2610,+APEC+Plaza,+49+Hoi+Yuen+Road,+Kwun+Tong,+Hong+Kong"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/item flex gap-3 cursor-pointer"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-emerald-400/30 bg-slate-900/80 backdrop-blur-xl text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.2)] group-hover/item:border-emerald-400/60 group-hover/item:shadow-[0_0_25px_rgba(16,185,129,0.4)] group-hover/item:scale-110 transition-all duration-300">
+                      <MapPin className="h-4 w-4 group-hover/item:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
                     </div>
-                    <p className="text-slate-300 group-hover/item:text-white transition-colors">
-                      <span className="text-slate-500 italic">Address to be updated</span>
-                    </p>
-                  </div>
-                  <div className="group/item flex gap-3 items-center cursor-default">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-purple-400/30 bg-slate-900/80 backdrop-blur-xl text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.2)] group-hover/item:border-purple-400/60 group-hover/item:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all duration-300 pointer-events-none">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-slate-400 mb-1 group-hover/item:text-slate-300 transition-colors">
+                        Registered Business Address
+                      </p>
+                      <p className="text-slate-300 group-hover/item:text-emerald-200 transition-colors leading-relaxed">
+                        Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong Kong
+                      </p>
+                    </div>
+                  </a>
+                  <a 
+                    href="mailto:info@maxtechimportexport.com"
+                    className="group/item flex gap-3 items-center cursor-pointer"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-purple-400/30 bg-slate-900/80 backdrop-blur-xl text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.2)] group-hover/item:border-purple-400/60 group-hover/item:shadow-[0_0_25px_rgba(168,85,247,0.4)] group-hover/item:scale-110 transition-all duration-300">
                       <Mail className="h-4 w-4 group-hover/item:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]" />
                     </div>
-                    <span className="text-slate-300 group-hover/item:text-purple-300 transition-colors">
-                      <span className="text-slate-500 italic">Email to be updated</span>
-                    </span>
-                  </div>
-                  <div className="group/item flex gap-3 items-center cursor-default">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-blue-400/30 bg-slate-900/80 backdrop-blur-xl text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.2)] group-hover/item:border-blue-400/60 group-hover/item:shadow-[0_0_25px_rgba(59,130,246,0.4)] transition-all duration-300 pointer-events-none">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-slate-400 mb-1 group-hover/item:text-slate-300 transition-colors">
+                        Email
+                      </p>
+                      <span className="text-slate-300 group-hover/item:text-purple-300 transition-colors inline-flex items-center gap-2">
+                        <span className="break-all">info@maxtechimportexport.com</span>
+                        <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex-shrink-0" />
+                      </span>
+                    </div>
+                  </a>
+                  <a 
+                    href="tel:+85247485904"
+                    className="group/item flex gap-3 items-center cursor-pointer"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-blue-400/30 bg-slate-900/80 backdrop-blur-xl text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.2)] group-hover/item:border-blue-400/60 group-hover/item:shadow-[0_0_25px_rgba(59,130,246,0.4)] group-hover/item:scale-110 transition-all duration-300">
                       <Phone className="h-4 w-4 group-hover/item:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
                     </div>
-                    <span className="text-slate-300 group-hover/item:text-blue-300 transition-colors">
-                      <span className="text-slate-500 italic">Phone to be updated</span>
-                    </span>
-                  </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-slate-400 mb-1 group-hover/item:text-slate-300 transition-colors">
+                        Phone
+                      </p>
+                      <span className="text-slate-300 group-hover/item:text-blue-300 transition-colors inline-flex items-center gap-2">
+                        <span>+852 47485904</span>
+                        <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex-shrink-0" />
+                      </span>
+                    </div>
+                  </a>
                 </div>
                 <Link
                   to="/compliance"
@@ -315,19 +351,67 @@ const Footer = () => {
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover/legal:opacity-100 transition-opacity duration-500" />
               
-              <div className="relative z-10">
-                <p className="mb-2 font-bold text-white drop-shadow-[0_0_10px_rgba(168,85,247,0.3)]">
-                  MAXTECH IMPORT AND EXPORT LIMITED
-                </p>
-                <p className="mb-1 text-slate-300">
-                  <span className="text-slate-500 italic">Registration details to be updated</span>
-                </p>
-                <p className="mb-1 text-slate-300">
-                  <span className="text-slate-500 italic">Registered Address: To be updated</span>
-                </p>
-                <p className="text-slate-400 text-xs">
-                  Established 2025 • Hong Kong Registered Company
-                </p>
+              {/* Shimmer effect */}
+              <div className="absolute -inset-1 footer-card-shimmer opacity-0 group-hover/legal:opacity-20" />
+              
+              <div className="relative z-10 space-y-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-emerald-400/30 bg-slate-900/80 backdrop-blur-xl text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)] group-hover/legal:border-emerald-400/60 group-hover/legal:shadow-[0_0_25px_rgba(16,185,129,0.5)] transition-all duration-300">
+                    <FileText className="h-5 w-5 group-hover/legal:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold tracking-[0.3em] text-slate-400">
+                      COMPANY VERIFICATION
+                    </p>
+                    <p className="text-lg font-bold text-white mt-1 drop-shadow-[0_0_10px_rgba(168,85,247,0.3)]">
+                      Legal Information
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="space-y-3 pt-2 border-t border-purple-400/20">
+                  <p className="font-bold text-white text-sm drop-shadow-[0_0_10px_rgba(168,85,247,0.3)]">
+                    MAXTECH IMPORT AND EXPORT LIMITED
+                  </p>
+                  
+                  <div className="group/info flex items-start gap-3">
+                    <div className="flex-shrink-0 mt-0.5">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-500/10 text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.2)] group-hover/info:border-emerald-400/60 group-hover/info:shadow-[0_0_15px_rgba(16,185,129,0.4)] transition-all duration-300">
+                        <ShieldCheck className="h-4 w-4 group-hover/info:drop-shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
+                      </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-slate-400 mb-1 group-hover/info:text-slate-300 transition-colors">
+                        Business Registration Certificate Number
+                      </p>
+                      <p className="text-sm font-semibold text-white group-hover/info:text-emerald-200 transition-colors break-all">
+                        79695478-000-01-26-4
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="group/info flex items-start gap-3">
+                    <div className="flex-shrink-0 mt-0.5">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10 text-cyan-400 shadow-[0_0_10px_rgba(56,189,248,0.2)] group-hover/info:border-cyan-400/60 group-hover/info:shadow-[0_0_15px_rgba(56,189,248,0.4)] transition-all duration-300">
+                        <MapPin className="h-4 w-4 group-hover/info:drop-shadow-[0_0_8px_rgba(56,189,248,0.6)]" />
+                      </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-slate-400 mb-1 group-hover/info:text-slate-300 transition-colors">
+                        Registered Business Address
+                      </p>
+                      <p className="text-sm font-semibold text-white leading-relaxed group-hover/info:text-cyan-200 transition-colors">
+                        Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong Kong
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="pt-2 border-t border-purple-400/20">
+                  <p className="text-slate-400 text-xs leading-relaxed">
+                    Established 2026 • Hong Kong Registered Company
+                  </p>
+                </div>
               </div>
             </div>
           </div>

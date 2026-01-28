@@ -12,6 +12,7 @@ import {
   Lock,
   Mail,
   Phone,
+  MapPin,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -139,7 +140,7 @@ const Compliance = () => {
                 </div>
                 <div className="grid gap-6 md:grid-cols-3 mt-8">
                   {[
-                    { label: "Established", value: "2025", color: "cyan", size: "text-3xl" },
+                    { label: "Established", value: "2026", color: "cyan", size: "text-3xl" },
                     { label: "Status", value: "Active", color: "blue", size: "text-3xl" },
                     { label: "Service", value: "Professional", color: "purple", size: "text-2xl" },
                   ].map((stat) => {
@@ -196,24 +197,72 @@ const Compliance = () => {
                   MAXTECH IMPORT AND EXPORT LIMITED
                 </h3>
                 <p className="text-slate-300 mt-4 leading-relaxed select-none">
-                  Registered Hong Kong company established in 2025. 
-                  <span className="text-slate-500 italic"> Registration details to be updated.</span>
+                  Registered Hong Kong company established in 2026. Professional import and export services with global reach.
                 </p>
-                <div className="rounded-2xl border border-purple-400/30 bg-slate-900/80 backdrop-blur-xl p-5 space-y-2 mt-6">
-                  <p className="text-xs uppercase tracking-[0.4em] text-slate-400 font-bold select-none">
-                    Registration number
-                  </p>
-                  <p className="text-2xl font-bold text-white select-none">
-                    <span className="text-slate-500 italic">To be updated</span>
+                <div className="rounded-2xl border border-emerald-400/30 bg-slate-900/80 backdrop-blur-xl p-5 space-y-3 mt-6 group/reg hover:border-emerald-400/60 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-500/20 text-emerald-400 group-hover/reg:scale-110 transition-transform duration-300">
+                      <ShieldCheck className="h-5 w-5 group-hover/reg:drop-shadow-[0_0_10px_rgba(16,185,129,0.6)]" />
+                    </div>
+                    <p className="text-xs uppercase tracking-[0.4em] text-slate-400 font-bold select-none">
+                      Business Registration Certificate Number
+                    </p>
+                  </div>
+                  <p className="text-xl font-bold text-white group-hover/reg:text-emerald-200 transition-colors select-none break-all">
+                    79695478-000-01-26-4
                   </p>
                 </div>
-                <div className="rounded-2xl border border-purple-400/30 bg-slate-900/80 backdrop-blur-xl p-5 space-y-2 mt-4">
+                <div className="rounded-2xl border border-cyan-400/30 bg-slate-900/80 backdrop-blur-xl p-5 space-y-3 mt-4 group/addr hover:border-cyan-400/60 hover:shadow-[0_0_25px_rgba(56,189,248,0.3)] transition-all duration-300">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/20 text-cyan-400 group-hover/addr:scale-110 transition-transform duration-300">
+                      <MapPin className="h-5 w-5 group-hover/addr:drop-shadow-[0_0_10px_rgba(56,189,248,0.6)]" />
+                    </div>
+                    <p className="text-xs uppercase tracking-[0.4em] text-slate-400 font-bold select-none">
+                      Registered Business Address
+                    </p>
+                  </div>
+                  <p className="text-white leading-relaxed group-hover/addr:text-cyan-200 transition-colors select-none">
+                    Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong Kong
+                  </p>
+                </div>
+                <div className="space-y-3 pt-4 border-t border-purple-400/20">
                   <p className="text-xs uppercase tracking-[0.4em] text-slate-400 font-bold select-none">
-                    Registered address
+                    Contact Information
                   </p>
-                  <p className="text-white select-none">
-                    <span className="text-slate-500 italic">Address to be updated</span>
-                  </p>
+                  <a 
+                    href="mailto:info@maxtechimportexport.com"
+                    className="group/contact flex items-center gap-3 rounded-xl border border-purple-400/30 bg-slate-900/80 backdrop-blur-xl p-3 hover:border-purple-400/60 hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-all duration-300"
+                  >
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-purple-400/30 bg-purple-500/20 text-purple-400 group-hover/contact:scale-110 transition-transform duration-300">
+                      <Mail className="h-4 w-4 group-hover/contact:drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-slate-400 mb-0.5 group-hover/contact:text-slate-300 transition-colors">
+                        Email
+                      </p>
+                      <p className="text-sm font-semibold text-white group-hover/contact:text-purple-300 transition-colors break-all">
+                        info@maxtechimportexport.com
+                      </p>
+                    </div>
+                    <ArrowRight className="h-3 w-3 text-purple-400 opacity-0 group-hover/contact:opacity-100 transition-opacity duration-300 flex-shrink-0" />
+                  </a>
+                  <a 
+                    href="tel:+85247485904"
+                    className="group/contact flex items-center gap-3 rounded-xl border border-blue-400/30 bg-slate-900/80 backdrop-blur-xl p-3 hover:border-blue-400/60 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300"
+                  >
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-blue-400/30 bg-blue-500/20 text-blue-400 group-hover/contact:scale-110 transition-transform duration-300">
+                      <Phone className="h-4 w-4 group-hover/contact:drop-shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-slate-400 mb-0.5 group-hover/contact:text-slate-300 transition-colors">
+                        Phone
+                      </p>
+                      <p className="text-sm font-semibold text-white group-hover/contact:text-blue-300 transition-colors">
+                        +852 47485904
+                      </p>
+                    </div>
+                    <ArrowRight className="h-3 w-3 text-blue-400 opacity-0 group-hover/contact:opacity-100 transition-opacity duration-300 flex-shrink-0" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -225,9 +274,9 @@ const Compliance = () => {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {[
             { label: "Status / Legal form", value: "Hong Kong Registered Company", color: "cyan" },
-            { label: "Established", value: "2025", color: "blue" },
-            { label: "Contact", value: "To be updated", color: "purple" },
-            { label: "Email", value: "Email to be updated", color: "pink" },
+            { label: "Established", value: "2026", color: "blue" },
+            { label: "Phone", value: "+852 47485904", color: "purple", link: "tel:+85247485904" },
+            { label: "Email", value: "info@maxtechimportexport.com", color: "pink", link: "mailto:info@maxtechimportexport.com" },
             { label: "Document Access", value: "Available upon request", color: "cyan" },
             { label: "Service Level", value: "Professional", color: "blue" },
           ].map((item) => {
@@ -237,6 +286,20 @@ const Compliance = () => {
               purple: "border-purple-400/30 bg-slate-900/80 hover:border-purple-400/60 text-purple-300",
               pink: "border-pink-400/30 bg-slate-900/80 hover:border-pink-400/60 text-pink-300",
             };
+            const content = item.link ? (
+              <a
+                href={item.link}
+                className={`${item.value === "Professional" ? "text-lg" : "text-xl"} font-bold select-none break-words leading-tight text-white hover:opacity-80 transition-opacity duration-300 inline-flex items-center gap-2 group/link`}
+              >
+                <span>{item.value}</span>
+                <ArrowRight className="h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
+              </a>
+            ) : (
+              <p className={`${item.value === "Professional" ? "text-lg" : "text-xl"} font-bold select-none break-words leading-tight text-white`}>
+                {item.value}
+              </p>
+            );
+
             return (
               <div
                 key={item.label}
@@ -245,9 +308,7 @@ const Compliance = () => {
                 <p className="text-xs uppercase tracking-[0.4em] text-slate-400 font-bold mb-3 select-none">
                   {item.label}
                 </p>
-                <p className={`${item.value === "Professional" ? "text-lg" : "text-xl"} font-bold select-none break-words leading-tight ${item.value.includes("To be updated") || item.value.includes("Email to be") ? "text-slate-500 italic" : "text-white"}`}>
-                  {item.value}
-                </p>
+                {content}
               </div>
             );
           })}
@@ -423,19 +484,31 @@ const Compliance = () => {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-wrap gap-4 text-sm text-slate-300">
-                <div className="flex items-center gap-2 group/item">
-                  <div className="p-2 rounded-lg border border-purple-400/30 bg-purple-500/10 group-hover/item:border-purple-400/60 transition-all duration-300 pointer-events-none">
-                    <Mail className="h-4 w-4 text-purple-400" />
+              <div className="flex flex-wrap gap-4 text-sm">
+                <a 
+                  href="mailto:info@maxtechimportexport.com"
+                  className="flex items-center gap-2 group/item cursor-pointer"
+                >
+                  <div className="p-2 rounded-lg border border-purple-400/30 bg-purple-500/10 group-hover/item:border-purple-400/60 group-hover/item:scale-110 transition-all duration-300">
+                    <Mail className="h-4 w-4 text-purple-400 group-hover/item:drop-shadow-[0_0_10px_rgba(168,85,247,0.6)]" />
                   </div>
-                  <span className="text-slate-500 italic">Email to be updated</span>
-                </div>
-                <div className="flex items-center gap-2 group/item">
-                  <div className="p-2 rounded-lg border border-blue-400/30 bg-blue-500/10 group-hover/item:border-blue-400/60 transition-all duration-300 pointer-events-none">
-                    <Phone className="h-4 w-4 text-blue-400" />
+                  <span className="text-slate-300 group-hover/item:text-purple-300 transition-colors duration-300 inline-flex items-center gap-2">
+                    <span>info@maxtechimportexport.com</span>
+                    <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
+                  </span>
+                </a>
+                <a 
+                  href="tel:+85247485904"
+                  className="flex items-center gap-2 group/item cursor-pointer"
+                >
+                  <div className="p-2 rounded-lg border border-blue-400/30 bg-blue-500/10 group-hover/item:border-blue-400/60 group-hover/item:scale-110 transition-all duration-300">
+                    <Phone className="h-4 w-4 text-blue-400 group-hover/item:drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]" />
                   </div>
-                  <span className="text-slate-500 italic">Phone to be updated</span>
-                </div>
+                  <span className="text-slate-300 group-hover/item:text-blue-300 transition-colors duration-300 inline-flex items-center gap-2">
+                    <span>+852 47485904</span>
+                    <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
+                  </span>
+                </a>
               </div>
             </div>
             <div className="rounded-[28px] border border-cyan-400/30 bg-slate-900/80 backdrop-blur-xl p-8">

@@ -10,16 +10,18 @@ import {
   ArrowRight,
   Mail,
   Phone,
+  MapPin,
+  FileText,
 } from "lucide-react";
 
 const timeline = [
   {
-    year: "2025",
+    year: "2026",
     label: "Company Establishment",
     copy: "Maxtech Import and Export Limited was established in Hong Kong, focusing on fashion, technology, and innovative import-export solutions.",
   },
   {
-    year: "2025",
+    year: "2026",
     label: "Vision & Mission",
     copy: "Building a professional trading platform with commitment to quality, compliance, and global partnerships.",
   },
@@ -66,13 +68,20 @@ const credentials = [
     label: "Company name",
     value: "MAXTECH IMPORT AND EXPORT LIMITED",
   },
-  { label: "Registration no.", value: "To be updated" },
+  { 
+    label: "Business Registration Certificate Number", 
+    value: "79695478-000-01-26-4",
+    icon: FileText,
+    color: "emerald",
+  },
   { label: "Legal form", value: "Hong Kong Registered Company" },
   {
-    label: "Registered address",
-    value: "To be updated",
+    label: "Registered Business Address",
+    value: "Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong Kong",
+    icon: MapPin,
+    color: "cyan",
   },
-  { label: "Established", value: "2025" },
+  { label: "Established", value: "2026" },
   { label: "Status", value: "Active" },
 ];
 
@@ -110,7 +119,7 @@ const About = () => {
             
             <Sparkles className="h-4 w-4 text-cyan-400 relative z-10 animate-sparkle" />
             <span className="relative z-10 bg-gradient-to-r from-cyan-300 via-white to-purple-300 bg-clip-text text-transparent select-none">
-              Hong Kong Registered • Established 2025
+              Hong Kong Registered • Established 2026
             </span>
             <Sparkles className="h-4 w-4 text-purple-400 relative z-10 animate-sparkle" />
           </div>
@@ -133,7 +142,7 @@ const About = () => {
                 </p>
                 <div className="grid gap-6 md:grid-cols-3 mt-8">
                   {[
-                    { label: "Established", value: "2025", color: "cyan" },
+                    { label: "Established", value: "2026", color: "cyan" },
                     { label: "Focus Areas", value: "Global", color: "blue" },
                     { label: "Commitment", value: "Quality", color: "purple" },
                   ].map((stat) => {
@@ -298,7 +307,7 @@ const About = () => {
                 Registered in Hong Kong.
               </h3>
               <p className="text-slate-300 max-w-xl leading-relaxed select-none">
-                <span className="text-slate-500 italic">Address details to be updated</span>
+                Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong Kong
               </p>
             </div>
           </div>
@@ -393,19 +402,46 @@ const About = () => {
                 committed to transparency, compliance, and building trusted business relationships.
               </p>
               <div className="grid gap-4 mt-6">
-                {credentials.map((row) => (
-                  <div
-                    key={row.label}
-                    className="group/row rounded-2xl border border-cyan-400/20 bg-slate-900/80 backdrop-blur-xl p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-[0_0_20px_rgba(56,189,248,0.2)]"
-                  >
-                    <span className="text-xs uppercase tracking-[0.4em] text-slate-400 font-bold select-none">
-                      {row.label}
-                    </span>
-                    <span className={`text-sm sm:text-base font-medium select-none ${row.value === "To be updated" ? "text-slate-500 italic" : "text-white"}`}>
-                      {row.value}
-                    </span>
-                  </div>
-                ))}
+                {credentials.map((row) => {
+                  const Icon = row.icon;
+                  const colorClasses = {
+                    emerald: "border-emerald-400/30 bg-emerald-500/10 text-emerald-400",
+                    cyan: "border-cyan-400/30 bg-cyan-500/10 text-cyan-400",
+                    default: "border-cyan-400/20",
+                  };
+                  const borderClasses = {
+                    emerald: "border-emerald-400/20 hover:border-emerald-400/40 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]",
+                    cyan: "border-cyan-400/20 hover:border-cyan-400/40 hover:shadow-[0_0_20px_rgba(56,189,248,0.2)]",
+                    default: "border-cyan-400/20 hover:border-cyan-400/40 hover:shadow-[0_0_20px_rgba(56,189,248,0.2)]",
+                  };
+                  const textColorClasses = {
+                    emerald: "text-emerald-200",
+                    cyan: "text-cyan-200",
+                    default: "text-white",
+                  };
+                  return (
+                    <div
+                      key={row.label}
+                      className={`group/row rounded-2xl border bg-slate-900/80 backdrop-blur-xl p-4 transition-all duration-300 ${borderClasses[row.color as keyof typeof borderClasses] || borderClasses.default}`}
+                    >
+                      <div className="flex items-start gap-3">
+                        {Icon && (
+                          <div className={`flex-shrink-0 flex h-10 w-10 items-center justify-center rounded-xl border ${colorClasses[row.color as keyof typeof colorClasses] || colorClasses.default} group-hover/row:scale-110 transition-transform duration-300`}>
+                            <Icon className="h-5 w-5 group-hover/row:drop-shadow-[0_0_10px_currentColor]" />
+                          </div>
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <span className="text-xs uppercase tracking-[0.4em] text-slate-400 font-bold select-none block mb-2">
+                            {row.label}
+                          </span>
+                          <span className={`text-sm sm:text-base font-semibold select-none break-words leading-relaxed ${textColorClasses[row.color as keyof typeof textColorClasses] || textColorClasses.default}`}>
+                            {row.value}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
               <div className="flex flex-wrap gap-4 mt-6">
                 <a
@@ -467,19 +503,31 @@ const About = () => {
                   <span className="relative z-10 pointer-events-none">Send Message</span>
                 </button>
               </form>
-              <div className="flex flex-wrap gap-4 text-sm text-slate-300 mt-6 select-none cursor-default">
-                <div className="flex items-center gap-2 group/item cursor-default">
-                  <div className="p-2 rounded-lg border border-purple-400/30 bg-purple-500/10 group-hover/item:border-purple-400/60 transition-all duration-300 pointer-events-none">
+              <div className="flex flex-wrap gap-4 text-sm mt-6">
+                <a 
+                  href="mailto:info@maxtechimportexport.com"
+                  className="flex items-center gap-2 group/item cursor-pointer"
+                >
+                  <div className="p-2 rounded-lg border border-purple-400/30 bg-purple-500/10 group-hover/item:border-purple-400/60 group-hover/item:scale-110 transition-all duration-300">
                     <Mail className="h-4 w-4 text-purple-400 group-hover/item:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]" />
                   </div>
-                  <span className="text-slate-500 italic">Email to be updated</span>
-                </div>
-                <div className="flex items-center gap-2 group/item cursor-default">
-                  <div className="p-2 rounded-lg border border-blue-400/30 bg-blue-500/10 group-hover/item:border-blue-400/60 transition-all duration-300 pointer-events-none">
+                  <span className="text-slate-300 group-hover/item:text-purple-300 transition-colors duration-300 inline-flex items-center gap-2">
+                    <span>info@maxtechimportexport.com</span>
+                    <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
+                  </span>
+                </a>
+                <a 
+                  href="tel:+85247485904"
+                  className="flex items-center gap-2 group/item cursor-pointer"
+                >
+                  <div className="p-2 rounded-lg border border-blue-400/30 bg-blue-500/10 group-hover/item:border-blue-400/60 group-hover/item:scale-110 transition-all duration-300">
                     <Phone className="h-4 w-4 text-blue-400 group-hover/item:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
                   </div>
-                  <span className="text-slate-500 italic">Phone to be updated</span>
-                </div>
+                  <span className="text-slate-300 group-hover/item:text-blue-300 transition-colors duration-300 inline-flex items-center gap-2">
+                    <span>+852 47485904</span>
+                    <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
+                  </span>
+                </a>
               </div>
             </div>
           </div>

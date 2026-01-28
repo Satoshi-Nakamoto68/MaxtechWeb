@@ -34,6 +34,9 @@ import {
   Monitor,
   Video,
   Wrench,
+  MapPin,
+  Phone,
+  FileText,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -671,7 +674,7 @@ const Home = () => {
                   Maxtech Import and Export Limited
                 </p>
                 <p className="text-xs lg:text-sm font-medium text-slate-300">
-                  Established 2025 • Hong Kong Registered Company
+                  Established 2026 • Hong Kong Registered Company
                 </p>
               </div>
             </div>
@@ -1264,7 +1267,7 @@ const Home = () => {
               },
               {
                 icon: Building2,
-                value: "2025",
+                value: "2026",
                 label: "Established",
                 color: "trust",
                 delay: "500ms",
@@ -1349,7 +1352,7 @@ const Home = () => {
                       <div className="mb-3">
                         <div
                           className={`text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 text-white drop-shadow-2xl ${
-                            stat.value === "2025" ? "tracking-wider" : ""
+                            stat.value === "2026" ? "tracking-wider" : ""
                           }`}
                           style={{
                             textShadow:
@@ -2408,29 +2411,59 @@ const Home = () => {
                 })}
               </div>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="group/info flex items-center gap-3 rounded-2xl border border-cyan-400/30 bg-slate-900/80 backdrop-blur-xl px-5 py-3 transition-all duration-300 hover:border-cyan-400/60 hover:shadow-[0_0_20px_rgba(56,189,248,0.3)]">
                   {/* Glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-transparent opacity-0 group-hover/info:opacity-100 transition-opacity duration-300 rounded-2xl" />
                   
-                  <Fingerprint className="h-6 w-6 text-cyan-400 relative z-10 group-hover/info:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)]" />
-                  <div className="relative z-10">
+                  <Fingerprint className="h-6 w-6 text-cyan-400 relative z-10 group-hover/info:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)] flex-shrink-0" />
+                  <div className="relative z-10 min-w-0">
                     <p className="text-sm text-slate-400 leading-tight">
                       Established
                     </p>
-                    <p className="text-base font-bold text-white">2025</p>
+                    <p className="text-base font-bold text-white">2026</p>
+                  </div>
+                </div>
+                <div className="group/info flex items-center gap-3 rounded-2xl border border-emerald-400/30 bg-slate-900/80 backdrop-blur-xl px-5 py-3 transition-all duration-300 hover:border-emerald-400/60 hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-emerald-500/10 to-transparent opacity-0 group-hover/info:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                  
+                  <FileText className="h-6 w-6 text-emerald-400 relative z-10 group-hover/info:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)] flex-shrink-0" />
+                  <div className="relative z-10 min-w-0">
+                    <p className="text-sm text-slate-400 leading-tight">
+                      Registration No.
+                    </p>
+                    <p className="text-xs sm:text-sm font-bold text-white break-all">79695478-000-01-26-4</p>
                   </div>
                 </div>
                 <div className="group/info flex items-center gap-3 rounded-2xl border border-purple-400/30 bg-slate-900/80 backdrop-blur-xl px-5 py-3 transition-all duration-300 hover:border-purple-400/60 hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]">
                   {/* Glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/10 to-transparent opacity-0 group-hover/info:opacity-100 transition-opacity duration-300 rounded-2xl" />
                   
-                  <Globe2 className="h-6 w-6 text-purple-400 relative z-10 group-hover/info:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]" />
-                  <div className="relative z-10">
+                  <Globe2 className="h-6 w-6 text-purple-400 relative z-10 group-hover/info:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)] flex-shrink-0" />
+                  <div className="relative z-10 min-w-0">
                     <p className="text-sm text-slate-400 leading-tight">
                       Global Reach
                     </p>
                     <p className="text-base font-bold text-white">Worldwide</p>
+                  </div>
+                </div>
+                <div className="group/info flex items-center gap-3 rounded-2xl border border-blue-400/30 bg-slate-900/80 backdrop-blur-xl px-5 py-3 transition-all duration-300 hover:border-blue-400/60 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-transparent opacity-0 group-hover/info:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                  
+                  <Phone className="h-6 w-6 text-blue-400 relative z-10 group-hover/info:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)] flex-shrink-0" />
+                  <div className="relative z-10 min-w-0">
+                    <p className="text-sm text-slate-400 leading-tight">
+                      Contact Phone
+                    </p>
+                    <a 
+                      href="tel:+85247485904"
+                      className="text-base font-bold text-white hover:text-blue-300 transition-colors duration-300 inline-flex items-center gap-1 group/link"
+                    >
+                      <span>+852 47485904</span>
+                      <ArrowRight className="h-3 w-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -2488,56 +2521,85 @@ const Home = () => {
 
                 <div className="space-y-4 relative z-10">
                   {[
-                    // {
-                    //   label: "Business Registration Certificate",
-                    //   code: "77636628-000-01-25-7",
-                    //   status: "Verified",
-                    //   accent: "accent",
-                    // },
+                    {
+                      label: "Business Registration Certificate",
+                      code: "79695478-000-01-26-4",
+                      status: "Verified",
+                      accent: "emerald",
+                      icon: FileText,
+                    },
                     {
                       label: "Company Information",
-                      code: "MAXTECH-INFO-2025",
+                      code: "MAXTECH-INFO-2026",
                       status: "Available",
                       accent: "cyan",
+                      icon: FileSearch,
                     },
                     {
                       label: "Compliance Documentation",
                       code: "COMPLIANCE-MAXTECH",
                       status: "Ready",
                       accent: "purple",
+                      icon: Layers,
                     },
                     {
                       label: "Business Profile",
-                      code: "PROFILE-2025",
+                      code: "PROFILE-2026",
                       status: "Updated",
                       accent: "blue",
+                      icon: ShieldCheck,
                     },
                   ].map((doc, index) => {
                     const accentClasses = {
                       cyan: "bg-cyan-500/15 text-cyan-300 border-cyan-400/30",
                       purple: "bg-purple-500/15 text-purple-300 border-purple-400/30",
                       blue: "bg-blue-500/15 text-blue-300 border-blue-400/30",
+                      emerald: "bg-emerald-500/15 text-emerald-300 border-emerald-400/30",
                     };
+                    const borderClasses = {
+                      cyan: "border-cyan-400/30 hover:border-cyan-400/60",
+                      purple: "border-purple-400/30 hover:border-purple-400/60",
+                      blue: "border-blue-400/30 hover:border-blue-400/60",
+                      emerald: "border-emerald-400/30 hover:border-emerald-400/60",
+                    };
+                    const shadowClasses = {
+                      cyan: "hover:shadow-[0_0_30px_rgba(56,189,248,0.4)]",
+                      purple: "hover:shadow-[0_0_30px_rgba(168,85,247,0.4)]",
+                      blue: "hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]",
+                      emerald: "hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]",
+                    };
+                    const glowClasses = {
+                      cyan: "from-cyan-500/0 via-cyan-500/15 to-purple-500/0",
+                      purple: "from-purple-500/0 via-purple-500/15 to-pink-500/0",
+                      blue: "from-blue-500/0 via-blue-500/15 to-cyan-500/0",
+                      emerald: "from-emerald-500/0 via-emerald-500/15 to-teal-500/0",
+                    };
+                    const Icon = doc.icon;
                     return (
                       <div
                         key={doc.label}
-                        className="group/doc relative overflow-hidden rounded-2xl border border-cyan-400/30 bg-slate-900/80 backdrop-blur-xl p-4 transition-all duration-500 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:-translate-y-1 hover:border-cyan-400/60"
+                        className={`group/doc relative overflow-hidden rounded-2xl border ${borderClasses[doc.accent as keyof typeof borderClasses]} bg-slate-900/80 backdrop-blur-xl p-4 transition-all duration-500 ${shadowClasses[doc.accent as keyof typeof shadowClasses]} hover:-translate-y-1`}
                         style={{ transitionDelay: `${index * 120}ms` }}
                       >
                         {/* Item glow */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/15 to-purple-500/0 opacity-0 group-hover/doc:opacity-100 transition-opacity duration-500" />
+                        <div className={`absolute inset-0 bg-gradient-to-r ${glowClasses[doc.accent as keyof typeof glowClasses]} opacity-0 group-hover/doc:opacity-100 transition-opacity duration-500`} />
                         
-                        <div className="relative flex items-center justify-between gap-4 z-10">
-                          <div>
+                        <div className="relative flex items-center gap-4 z-10">
+                          <div className="flex-shrink-0">
+                            <div className={`flex h-10 w-10 items-center justify-center rounded-xl border ${accentClasses[doc.accent as keyof typeof accentClasses]} ${doc.accent === 'emerald' ? 'shadow-[0_0_15px_rgba(16,185,129,0.3)]' : doc.accent === 'cyan' ? 'shadow-[0_0_15px_rgba(56,189,248,0.3)]' : doc.accent === 'purple' ? 'shadow-[0_0_15px_rgba(168,85,247,0.3)]' : 'shadow-[0_0_15px_rgba(59,130,246,0.3)]'} group-hover/doc:scale-110 transition-transform duration-300`}>
+                              <Icon className={`h-5 w-5 ${doc.accent === 'emerald' ? 'text-emerald-300 group-hover/doc:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]' : doc.accent === 'cyan' ? 'text-cyan-300 group-hover/doc:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)]' : doc.accent === 'purple' ? 'text-purple-300 group-hover/doc:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]' : 'text-blue-300 group-hover/doc:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]'}`} />
+                            </div>
+                          </div>
+                          <div className="flex-1 min-w-0">
                             <p className="text-sm text-slate-300 group-hover/doc:text-white transition-colors">
                               {doc.label}
                             </p>
-                            <p className="text-lg font-bold text-white group-hover/doc:text-cyan-200 transition-colors drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]">
+                            <p className={`text-lg font-bold text-white ${doc.accent === 'emerald' ? 'group-hover/doc:text-emerald-200 drop-shadow-[0_0_10px_rgba(16,185,129,0.3)]' : doc.accent === 'cyan' ? 'group-hover/doc:text-cyan-200 drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]' : doc.accent === 'purple' ? 'group-hover/doc:text-purple-200 drop-shadow-[0_0_10px_rgba(168,85,247,0.3)]' : 'group-hover/doc:text-blue-200 drop-shadow-[0_0_10px_rgba(59,130,246,0.3)]'} transition-colors break-all`}>
                               {doc.code}
                             </p>
                           </div>
                           <span
-                            className={`rounded-full px-3 py-1 text-xs font-bold border ${accentClasses[doc.accent as keyof typeof accentClasses]} shadow-[0_0_10px_rgba(56,189,248,0.3)]`}
+                            className={`flex-shrink-0 rounded-full px-3 py-1 text-xs font-bold border ${accentClasses[doc.accent as keyof typeof accentClasses]} ${doc.accent === 'emerald' ? 'shadow-[0_0_10px_rgba(16,185,129,0.3)]' : doc.accent === 'cyan' ? 'shadow-[0_0_10px_rgba(56,189,248,0.3)]' : doc.accent === 'purple' ? 'shadow-[0_0_10px_rgba(168,85,247,0.3)]' : 'shadow-[0_0_10px_rgba(59,130,246,0.3)]'}`}
                           >
                             {doc.status}
                           </span>
@@ -2558,7 +2620,7 @@ const Home = () => {
                 {/* Glowing orb */}
                 <div className="absolute -top-8 -right-8 h-24 w-24 rounded-full bg-purple-500/20 blur-3xl animate-pulse-slow" />
                 
-                <div className="relative space-y-4 z-10">
+                <div className="relative space-y-5 z-10">
                   <div className="flex items-center gap-3">
                     <div className="relative">
                       <div className="absolute inset-0 bg-purple-400/30 rounded-full blur-lg opacity-0 group-hover/registry:opacity-100 transition-opacity duration-500" />
@@ -2573,7 +2635,44 @@ const Home = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="text-sm text-slate-300 leading-relaxed">
+                  
+                  <div className="space-y-3 pt-2 border-t border-purple-400/20">
+                    <div className="group/info flex items-start gap-3">
+                      <div className="relative flex-shrink-0 mt-0.5">
+                        <div className="absolute inset-0 bg-emerald-400/20 rounded-lg blur-md opacity-0 group-hover/info:opacity-100 transition-opacity duration-300" />
+                        <MapPin className="h-5 w-5 text-emerald-400 relative z-10 group-hover/info:drop-shadow-[0_0_10px_rgba(16,185,129,0.6)] transition-all duration-300 group-hover/info:scale-110" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs text-slate-400 mb-1 group-hover/info:text-slate-300 transition-colors">
+                          Registered Business Address
+                        </p>
+                        <p className="text-sm font-semibold text-white leading-relaxed group-hover/info:text-emerald-200 transition-colors">
+                          Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong Kong
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="group/info flex items-center gap-3">
+                      <div className="relative flex-shrink-0">
+                        <div className="absolute inset-0 bg-cyan-400/20 rounded-lg blur-md opacity-0 group-hover/info:opacity-100 transition-opacity duration-300" />
+                        <Phone className="h-5 w-5 text-cyan-400 relative z-10 group-hover/info:drop-shadow-[0_0_10px_rgba(56,189,248,0.6)] transition-all duration-300 group-hover/info:scale-110" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs text-slate-400 mb-1 group-hover/info:text-slate-300 transition-colors">
+                          Contact Phone
+                        </p>
+                        <a 
+                          href="tel:+85247485904"
+                          className="text-sm font-semibold text-white hover:text-cyan-300 transition-colors duration-300 inline-flex items-center gap-2 group/link"
+                        >
+                          <span>+852 47485904</span>
+                          <ArrowRight className="h-3 w-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-sm text-slate-300 leading-relaxed pt-2">
                     Maxtech Import and Export Limited is a registered Hong Kong company. 
                     Company documents and verification materials are available upon request.
                   </p>

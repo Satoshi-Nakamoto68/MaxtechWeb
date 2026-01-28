@@ -1,4 +1,4 @@
-import { ShieldCheck, Award, MapPin, CheckCircle2, Sparkles, Zap, Globe2 } from "lucide-react";
+import { ShieldCheck, Award, MapPin, CheckCircle2, Sparkles, Zap, Globe2, FileText } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const TrustBar = () => {
@@ -19,22 +19,28 @@ const TrustBar = () => {
       gradient: "from-blue-500/20 via-cyan-500/20 to-teal-500/20",
     },
     {
+      icon: FileText,
+      label: "Business Registration",
+      value: "79695478-000-01-26-4",
+      gradient: "from-indigo-500/20 via-blue-500/20 to-cyan-500/20",
+    },
+    {
       icon: Award,
       label: "Certified Business",
       value: "ISO 9001:2015 Certified",
       gradient: "from-amber-500/20 via-orange-500/20 to-yellow-500/20",
     },
     {
+      icon: MapPin,
+      label: "Registered Address",
+      value: "Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong Kong",
+      gradient: "from-emerald-500/20 via-green-500/20 to-lime-500/20",
+    },
+    {
       icon: Globe2,
       label: "Global Reach",
       value: "Worldwide Shipping & Distribution",
       gradient: "from-purple-500/20 via-pink-500/20 to-rose-500/20",
-    },
-    {
-      icon: MapPin,
-      label: "Headquarters",
-      value: "International Business District",
-      gradient: "from-emerald-500/20 via-green-500/20 to-lime-500/20",
     },
   ];
 
@@ -399,13 +405,37 @@ const TrustBar = () => {
           </div>
           
           {/* Trust indicators row */}
-          <div className="flex items-center justify-center gap-3 text-[10px] flex-wrap">
+          <div className="flex items-center justify-center gap-2 text-[10px] flex-wrap">
+            <div className="flex items-center gap-1.5 group relative">
+              <div className="absolute -inset-1 bg-indigo-400/20 rounded-lg opacity-0 group-hover:opacity-100 blur transition-opacity duration-300" />
+              <div className="relative flex items-center gap-1.5 px-2 py-1 bg-white/90 backdrop-blur-sm rounded-lg border border-slate-200/60 group-hover:border-indigo-400/80 transition-all duration-300">
+                <FileText className="h-3.5 w-3.5 text-indigo-600 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125" />
+                <span className="text-slate-800 transition-colors duration-300 group-hover:text-indigo-700 font-medium text-[9px] sm:text-[10px]">
+                  79695478-000-01-26-4
+                </span>
+              </div>
+            </div>
+            
+            <div className="h-4 w-px bg-gradient-to-b from-transparent via-cyan-400/50 to-transparent animate-pulse-vertical" />
+            
             <div className="flex items-center gap-1.5 group relative">
               <div className="absolute -inset-1 bg-blue-400/20 rounded-lg opacity-0 group-hover:opacity-100 blur transition-opacity duration-300" />
               <div className="relative flex items-center gap-1.5 px-2 py-1 bg-white/90 backdrop-blur-sm rounded-lg border border-slate-200/60 group-hover:border-blue-400/80 transition-all duration-300">
                 <Award className="h-3.5 w-3.5 text-blue-600 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125" />
                 <span className="text-slate-800 transition-colors duration-300 group-hover:text-blue-700 font-medium">
                   ISO 9001:2015
+                </span>
+              </div>
+            </div>
+            
+            <div className="h-4 w-px bg-gradient-to-b from-transparent via-cyan-400/50 to-transparent animate-pulse-vertical" />
+            
+            <div className="flex items-center gap-1.5 group relative">
+              <div className="absolute -inset-1 bg-emerald-400/20 rounded-lg opacity-0 group-hover:opacity-100 blur transition-opacity duration-300" />
+              <div className="relative flex items-center gap-1.5 px-2 py-1 bg-white/90 backdrop-blur-sm rounded-lg border border-slate-200/60 group-hover:border-emerald-400/80 transition-all duration-300">
+                <MapPin className="h-3.5 w-3.5 text-emerald-600 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
+                <span className="text-slate-800 transition-colors duration-300 group-hover:text-emerald-700 font-medium text-[9px] sm:text-[10px] max-w-[140px] sm:max-w-none truncate">
+                  Unit 2610, APEC Plaza, Kwun Tong
                 </span>
               </div>
             </div>

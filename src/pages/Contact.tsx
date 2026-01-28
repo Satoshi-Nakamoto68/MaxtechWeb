@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, MapPin, Phone, Clock } from "lucide-react";
+import { Mail, MapPin, Phone, Clock, FileText, ShieldCheck, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -74,43 +74,60 @@ const Contact = () => {
 
                 <div className="space-y-6">
                   {/* Registered Address */}
-                  <div className="group/item flex items-start gap-4 cursor-default">
-                    <div className="p-3 border border-cyan-400/30 bg-cyan-500/20 text-cyan-400 rounded-lg shadow-[0_0_15px_rgba(56,189,248,0.3)] group-hover/item:scale-110 transition-transform duration-300 pointer-events-none">
-                      <MapPin className="h-6 w-6 group-hover/item:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)]" />
+                  <a 
+                    href="https://maps.google.com/?q=Unit+2610,+APEC+Plaza,+49+Hoi+Yuen+Road,+Kwun+Tong,+Hong+Kong"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/item flex items-start gap-4 cursor-pointer"
+                  >
+                    <div className="p-3 border border-emerald-400/30 bg-emerald-500/20 text-emerald-400 rounded-lg shadow-[0_0_15px_rgba(16,185,129,0.3)] group-hover/item:scale-110 group-hover/item:border-emerald-400/60 group-hover/item:shadow-[0_0_25px_rgba(16,185,129,0.5)] transition-all duration-300">
+                      <MapPin className="h-6 w-6 group-hover/item:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
                     </div>
-                    <div>
-                      <h3 className="font-bold mb-2 text-white select-none">Registered Office</h3>
-                      <p className="text-slate-300 select-none">
-                        <span className="text-slate-500 italic">Address to be updated</span>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-bold mb-2 text-white group-hover/item:text-emerald-200 transition-colors select-none">Registered Business Address</h3>
+                      <p className="text-slate-300 group-hover/item:text-emerald-200 transition-colors leading-relaxed select-none">
+                        Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong Kong
                       </p>
+                      <div className="mt-2 flex items-center gap-2 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                        <ArrowRight className="h-3 w-3 text-emerald-400" />
+                        <span className="text-xs text-emerald-400">View on Google Maps</span>
+                      </div>
                     </div>
-                  </div>
+                  </a>
 
                   {/* Email */}
-                  <div className="group/item flex items-start gap-4 cursor-default">
-                    <div className="p-3 border border-purple-400/30 bg-purple-500/20 text-purple-400 rounded-lg shadow-[0_0_15px_rgba(168,85,247,0.3)] group-hover/item:scale-110 transition-transform duration-300 pointer-events-none">
+                  <a 
+                    href="mailto:info@maxtechimportexport.com"
+                    className="group/item flex items-start gap-4 cursor-pointer"
+                  >
+                    <div className="p-3 border border-purple-400/30 bg-purple-500/20 text-purple-400 rounded-lg shadow-[0_0_15px_rgba(168,85,247,0.3)] group-hover/item:scale-110 group-hover/item:border-purple-400/60 group-hover/item:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all duration-300">
                       <Mail className="h-6 w-6 group-hover/item:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]" />
                     </div>
-                    <div>
-                      <h3 className="font-bold mb-2 text-white select-none">Email</h3>
-                      <span className="text-slate-300 select-none">
-                        <span className="text-slate-500 italic">Email to be updated</span>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-bold mb-2 text-white group-hover/item:text-purple-200 transition-colors select-none">Email</h3>
+                      <span className="text-slate-300 group-hover/item:text-purple-200 transition-colors inline-flex items-center gap-2 select-none">
+                        <span className="break-all">info@maxtechimportexport.com</span>
+                        <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex-shrink-0" />
                       </span>
                     </div>
-                  </div>
+                  </a>
 
                   {/* Phone */}
-                  <div className="group/item flex items-start gap-4 cursor-default">
-                    <div className="p-3 border border-blue-400/30 bg-blue-500/20 text-blue-400 rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.3)] group-hover/item:scale-110 transition-transform duration-300 pointer-events-none">
+                  <a 
+                    href="tel:+85247485904"
+                    className="group/item flex items-start gap-4 cursor-pointer"
+                  >
+                    <div className="p-3 border border-blue-400/30 bg-blue-500/20 text-blue-400 rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.3)] group-hover/item:scale-110 group-hover/item:border-blue-400/60 group-hover/item:shadow-[0_0_25px_rgba(59,130,246,0.5)] transition-all duration-300">
                       <Phone className="h-6 w-6 group-hover/item:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
                     </div>
-                    <div>
-                      <h3 className="font-bold mb-2 text-white select-none">Phone</h3>
-                      <p className="text-slate-300 select-none">
-                        <span className="text-slate-500 italic">Phone to be updated</span>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-bold mb-2 text-white group-hover/item:text-blue-200 transition-colors select-none">Phone</h3>
+                      <p className="text-slate-300 group-hover/item:text-blue-200 transition-colors inline-flex items-center gap-2 select-none">
+                        <span>+852 47485904</span>
+                        <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
                       </p>
                     </div>
-                  </div>
+                  </a>
 
                   {/* Business Hours */}
                   <div className="group/item flex items-start gap-4 cursor-default">
@@ -139,21 +156,29 @@ const Contact = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover/company-info:opacity-100 transition-opacity duration-500 rounded-[28px]" />
               
               <div className="relative z-10">
-                <h3 className="font-bold mb-4 text-white bg-gradient-to-r from-purple-300 via-white to-pink-300 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(168,85,247,0.3)] select-none">
-                  Company Information
-                </h3>
-                <div className="space-y-3 text-sm select-none cursor-default">
-                  <div className="rounded-2xl border border-purple-400/20 bg-slate-900/80 backdrop-blur-xl p-4">
-                    <p className="text-slate-400 font-bold mb-1">Company Name:</p>
-                    <p className="text-white font-bold">MAXTECH IMPORT AND EXPORT LIMITED</p>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-purple-400/30 bg-purple-500/20 text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.3)] group-hover/company-info:scale-110 transition-transform duration-300">
+                    <ShieldCheck className="h-5 w-5 group-hover/company-info:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]" />
                   </div>
-                  <div className="rounded-2xl border border-purple-400/20 bg-slate-900/80 backdrop-blur-xl p-4">
-                    <p className="text-slate-400 font-bold mb-1">Registration No.:</p>
-                    <p className="text-slate-500 italic">To be updated</p>
+                  <h3 className="font-bold text-white bg-gradient-to-r from-purple-300 via-white to-pink-300 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(168,85,247,0.3)] select-none">
+                    Company Information
+                  </h3>
+                </div>
+                <div className="space-y-3 text-sm">
+                  <div className="group/item rounded-2xl border border-purple-400/20 bg-slate-900/80 backdrop-blur-xl p-4 hover:border-purple-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all duration-300">
+                    <p className="text-slate-400 font-bold mb-1 text-xs uppercase tracking-[0.2em] select-none">Company Name</p>
+                    <p className="text-white font-bold select-none">MAXTECH IMPORT AND EXPORT LIMITED</p>
                   </div>
-                  <div className="rounded-2xl border border-purple-400/20 bg-slate-900/80 backdrop-blur-xl p-4">
-                    <p className="text-slate-400 font-bold mb-1">Established:</p>
-                    <p className="text-white font-bold">2025</p>
+                  <div className="group/item rounded-2xl border border-emerald-400/30 bg-slate-900/80 backdrop-blur-xl p-4 hover:border-emerald-400/50 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <FileText className="h-4 w-4 text-emerald-400 group-hover/item:drop-shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
+                      <p className="text-slate-400 font-bold text-xs uppercase tracking-[0.2em] select-none">Business Registration Certificate Number</p>
+                    </div>
+                    <p className="text-emerald-200 font-bold break-all select-none">79695478-000-01-26-4</p>
+                  </div>
+                  <div className="group/item rounded-2xl border border-purple-400/20 bg-slate-900/80 backdrop-blur-xl p-4 hover:border-purple-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all duration-300">
+                    <p className="text-slate-400 font-bold mb-1 text-xs uppercase tracking-[0.2em] select-none">Established</p>
+                    <p className="text-white font-bold select-none">2026</p>
                   </div>
                 </div>
               </div>
@@ -262,15 +287,45 @@ const Contact = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover/map:opacity-100 transition-opacity duration-500 rounded-[32px]" />
             
             <div className="relative z-10">
-              <h2 className="font-serif text-3xl font-black mb-8 text-center bg-gradient-to-r from-purple-300 via-white to-pink-300 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(168,85,247,0.3)] select-none">
-                Our Location
-              </h2>
-              <div className="aspect-video rounded-2xl overflow-hidden border border-purple-400/30 shadow-[0_20px_60px_rgba(168,85,247,0.2)]">
-                <div className="w-full h-full flex items-center justify-center bg-slate-900/80 backdrop-blur-xl">
-                  <p className="text-slate-400 italic select-none">
-                    Map location to be updated
+              <div className="flex items-center justify-center gap-3 mb-8">
+                <MapPin className="h-6 w-6 text-purple-400" />
+                <h2 className="font-serif text-3xl font-black bg-gradient-to-r from-purple-300 via-white to-pink-300 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(168,85,247,0.3)] select-none">
+                  Our Location
+                </h2>
+              </div>
+              <a
+                href="https://maps.google.com/?q=Unit+2610,+APEC+Plaza,+49+Hoi+Yuen+Road,+Kwun+Tong,+Hong+Kong"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/map-link aspect-video rounded-2xl overflow-hidden border border-purple-400/30 shadow-[0_20px_60px_rgba(168,85,247,0.2)] block relative"
+              >
+                <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 backdrop-blur-xl group-hover/map-link:from-purple-900/20 group-hover/map-link:via-slate-800 group-hover/map-link:to-purple-900/20 transition-all duration-500">
+                  <div className="p-4 rounded-full border border-purple-400/30 bg-purple-500/20 mb-4 group-hover/map-link:scale-110 group-hover/map-link:border-purple-400/60 transition-all duration-300">
+                    <MapPin className="h-8 w-8 text-purple-400 group-hover/map-link:drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]" />
+                  </div>
+                  <p className="text-slate-300 text-center px-6 group-hover/map-link:text-purple-200 transition-colors duration-300 leading-relaxed">
+                    Unit 2610, APEC Plaza
+                    <br />
+                    49 Hoi Yuen Road, Kwun Tong
+                    <br />
+                    Hong Kong
                   </p>
+                  <div className="mt-4 flex items-center gap-2 opacity-0 group-hover/map-link:opacity-100 transition-opacity duration-300">
+                    <ArrowRight className="h-4 w-4 text-purple-400" />
+                    <span className="text-sm text-purple-400 font-semibold">Open in Google Maps</span>
+                  </div>
                 </div>
+              </a>
+              <div className="mt-6 text-center">
+                <a
+                  href="https://maps.google.com/?q=Unit+2610,+APEC+Plaza,+49+Hoi+Yuen+Road,+Kwun+Tong,+Hong+Kong"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/link inline-flex items-center gap-2 text-purple-300 hover:text-purple-200 transition-colors duration-300"
+                >
+                  <span className="text-sm font-semibold">Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong Kong</span>
+                  <ArrowRight className="h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
+                </a>
               </div>
             </div>
           </div>
