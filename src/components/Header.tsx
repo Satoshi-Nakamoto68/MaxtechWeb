@@ -80,16 +80,17 @@ const Header = () => {
     const particlesContainer = particlesRef.current;
     if (!particlesContainer) return;
 
-    const createParticle = (type: 'sparkle' | 'glow' | 'star') => {
+    const createParticle = (type: "sparkle" | "glow" | "star") => {
       const particle = document.createElement("div");
       const colors = {
-        sparkle: 'rgba(56, 189, 248, 0.6)',
-        glow: 'rgba(168, 85, 247, 0.5)',
-        star: 'rgba(236, 72, 153, 0.4)'
+        sparkle: "rgba(56, 189, 248, 0.6)",
+        glow: "rgba(168, 85, 247, 0.5)",
+        star: "rgba(236, 72, 153, 0.4)",
       };
-      
+
       particle.className = `absolute rounded-full`;
-      const size = type === 'star' ? Math.random() * 3 + 1 : Math.random() * 2 + 0.5;
+      const size =
+        type === "star" ? Math.random() * 3 + 1 : Math.random() * 2 + 0.5;
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
       particle.style.left = `${Math.random() * 100}%`;
@@ -105,9 +106,9 @@ const Header = () => {
       }, 6000);
     };
 
-    const interval1 = setInterval(() => createParticle('sparkle'), 300);
-    const interval2 = setInterval(() => createParticle('glow'), 500);
-    const interval3 = setInterval(() => createParticle('star'), 800);
+    const interval1 = setInterval(() => createParticle("sparkle"), 300);
+    const interval2 = setInterval(() => createParticle("glow"), 500);
+    const interval3 = setInterval(() => createParticle("star"), 800);
 
     return () => {
       clearInterval(interval1);
@@ -127,14 +128,19 @@ const Header = () => {
     setIsSearching(true);
     const timeoutId = setTimeout(() => {
       const query = searchQuery.toLowerCase().trim();
-      const results = products.filter((product) => {
-        const nameMatch = product.name.toLowerCase().includes(query);
-        const descMatch = product.shortDescription.toLowerCase().includes(query) ||
-                         product.fullDescription.toLowerCase().includes(query);
-        const categoryMatch = categoryLabels[product.category].toLowerCase().includes(query);
-        return nameMatch || descMatch || categoryMatch;
-      }).slice(0, 8); // Limit to 8 results
-      
+      const results = products
+        .filter((product) => {
+          const nameMatch = product.name.toLowerCase().includes(query);
+          const descMatch =
+            product.shortDescription.toLowerCase().includes(query) ||
+            product.fullDescription.toLowerCase().includes(query);
+          const categoryMatch = categoryLabels[product.category]
+            .toLowerCase()
+            .includes(query);
+          return nameMatch || descMatch || categoryMatch;
+        })
+        .slice(0, 8); // Limit to 8 results
+
       setSearchResults(results);
       setIsSearching(false);
       setSelectedResultIndex(-1);
@@ -175,7 +181,9 @@ const Header = () => {
         !searchResultsRef.current.contains(target)
       ) {
         // Don't close if clicking on the search button
-        const searchButton = document.querySelector('button[class*="group/search"]');
+        const searchButton = document.querySelector(
+          'button[class*="group/search"]',
+        );
         if (searchButton && searchButton.contains(target)) {
           return;
         }
@@ -197,13 +205,13 @@ const Header = () => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowDown") {
         e.preventDefault();
-        setSelectedResultIndex((prev) => 
-          prev < searchResults.length - 1 ? prev + 1 : 0
+        setSelectedResultIndex((prev) =>
+          prev < searchResults.length - 1 ? prev + 1 : 0,
         );
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
-        setSelectedResultIndex((prev) => 
-          prev > 0 ? prev - 1 : searchResults.length - 1
+        setSelectedResultIndex((prev) =>
+          prev > 0 ? prev - 1 : searchResults.length - 1,
         );
       } else if (e.key === "Enter" && selectedResultIndex >= 0) {
         e.preventDefault();
@@ -221,9 +229,14 @@ const Header = () => {
   // Scroll selected result into view
   useEffect(() => {
     if (selectedResultIndex >= 0 && searchResultsRef.current) {
-      const selectedElement = searchResultsRef.current.children[selectedResultIndex] as HTMLElement;
+      const selectedElement = searchResultsRef.current.children[
+        selectedResultIndex
+      ] as HTMLElement;
       if (selectedElement) {
-        selectedElement.scrollIntoView({ block: "nearest", behavior: "smooth" });
+        selectedElement.scrollIntoView({
+          block: "nearest",
+          behavior: "smooth",
+        });
       }
     }
   }, [selectedResultIndex]);
@@ -282,8 +295,8 @@ const Header = () => {
             ? "shadow-2xl shadow-cyan-500/20 border-b border-cyan-400/30"
             : "border-b border-cyan-400/20"
         }`}
-        style={{ 
-          isolation: 'isolate',
+        style={{
+          isolation: "isolate",
           background: scrolled
             ? `linear-gradient(135deg, 
                 rgba(15, 23, 42, 0.98) 0%, 
@@ -306,88 +319,150 @@ const Header = () => {
       >
         {/* Background container with overflow hidden */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Animated holographic gradient background - vibrant */}
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 via-blue-600/10 via-purple-600/10 via-pink-600/10 to-rose-600/10 animate-gradient-xy-header" />
-        
-        {/* Dynamic mesh gradient overlay */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(56,189,248,0.4),transparent_50%)] animate-pulse-slow" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(168,85,247,0.4),transparent_50%)] animate-pulse-slow-delayed" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(236,72,153,0.3),transparent_50%)] animate-pulse-slow-delayed-2" />
-        </div>
+          {/* Animated holographic gradient background - vibrant */}
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 via-blue-600/10 via-purple-600/10 via-pink-600/10 to-rose-600/10 animate-gradient-xy-header" />
 
-        {/* Animated wave pattern - vibrant */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(56,189,248,0.5)_25%,rgba(168,85,247,0.5)_50%,rgba(236,72,153,0.5)_75%,transparent_100%)] animate-wave-header" />
-        </div>
+          {/* Dynamic mesh gradient overlay */}
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(56,189,248,0.4),transparent_50%)] animate-pulse-slow" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(168,85,247,0.4),transparent_50%)] animate-pulse-slow-delayed" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(236,72,153,0.3),transparent_50%)] animate-pulse-slow-delayed-2" />
+          </div>
 
-        {/* Dynamic particles container */}
-        <div ref={particlesRef} className="absolute inset-0 overflow-hidden pointer-events-none" />
+          {/* Animated wave pattern - vibrant */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(56,189,248,0.5)_25%,rgba(168,85,247,0.5)_50%,rgba(236,72,153,0.5)_75%,transparent_100%)] animate-wave-header" />
+          </div>
 
-        {/* Glowing orbs with 3D effect - vibrant */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-[5%] w-64 h-64 bg-cyan-500/15 rounded-full blur-[80px] animate-orb-float-header-1" />
-          <div className="absolute top-1/2 right-[10%] w-56 h-56 bg-purple-500/15 rounded-full blur-[70px] animate-orb-float-header-2" />
-          <div className="absolute top-0 left-1/2 w-60 h-60 bg-blue-500/12 rounded-full blur-[75px] animate-orb-float-header-3" />
-          <div className="absolute bottom-0 right-[20%] w-48 h-48 bg-pink-500/12 rounded-full blur-[65px] animate-orb-float-header-4" />
-        </div>
+          {/* Dynamic particles container */}
+          <div
+            ref={particlesRef}
+            className="absolute inset-0 overflow-hidden pointer-events-none"
+          />
 
-        {/* Animated grid pattern - neon */}
-        <div className="absolute inset-0 opacity-[0.1]">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(56,189,248,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.3)_1px,transparent_1px)] bg-[size:40px_40px] animate-grid-shift-header" />
-        </div>
+          {/* Glowing orbs with 3D effect - vibrant */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/2 left-[5%] w-64 h-64 bg-cyan-500/15 rounded-full blur-[80px] animate-orb-float-header-1" />
+            <div className="absolute top-1/2 right-[10%] w-56 h-56 bg-purple-500/15 rounded-full blur-[70px] animate-orb-float-header-2" />
+            <div className="absolute top-0 left-1/2 w-60 h-60 bg-blue-500/12 rounded-full blur-[75px] animate-orb-float-header-3" />
+            <div className="absolute bottom-0 right-[20%] w-48 h-48 bg-pink-500/12 rounded-full blur-[65px] animate-orb-float-header-4" />
+          </div>
 
-        {/* Neon border glow effect */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 via-purple-400 to-transparent animate-border-glow-header" />
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
-        </div>
+          {/* Animated grid pattern - neon */}
+          <div className="absolute inset-0 opacity-[0.1]">
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(56,189,248,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.3)_1px,transparent_1px)] bg-[size:40px_40px] animate-grid-shift-header" />
+          </div>
 
-        {/* Shimmer effect on scroll - enhanced */}
-        {scrolled && (
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(56,189,248,0.4)_50%,transparent_100%)] animate-shimmer-header" />
-        )}
+          {/* Neon border glow effect */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 via-purple-400 to-transparent animate-border-glow-header" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
+          </div>
 
-        {/* Scanning line effect */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scan-line" />
-        </div>
+          {/* Shimmer effect on scroll - enhanced */}
+          {scrolled && (
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(56,189,248,0.4)_50%,transparent_100%)] animate-shimmer-header" />
+          )}
+
+          {/* Scanning line effect */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scan-line" />
+          </div>
         </div>
 
         {/* Content container - no overflow hidden to allow dropdowns */}
-        <div className="section-container relative z-10" style={{ isolation: 'isolate' }}>
+        <div
+          className="section-container relative z-10"
+          style={{ isolation: "isolate" }}
+        >
           <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo with neon and 3D effects */}
+            {/* Logo with neon and 3D effects - Focal Point Design */}
             <Link
               to="/"
-              className="flex items-center space-x-3 group relative z-10"
+              className="flex items-center group relative z-10 h-full"
+              aria-label="Home"
             >
-              <div className="relative">
-                {/* Outer glow ring */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400 via-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700 rounded-lg animate-pulse-slow" />
-                
-                {/* Inner glow */}
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/30 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
-                
-                {/* Logo text with neon effect */}
-                <div className="relative font-serif text-2xl lg:text-3xl font-black tracking-tight">
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent blur-sm opacity-50 group-hover:opacity-100 transition-opacity duration-500 animate-glow-text-neon">
-                    MAXTECH
+              <div className="relative h-full flex items-center">
+                {/* Outer glow ring - always visible for prominence */}
+                <div className="absolute -inset-3 bg-gradient-to-r from-cyan-400 via-blue-500 via-purple-500 to-pink-500 opacity-30 group-hover:opacity-100 blur-2xl transition-opacity duration-700 rounded-xl animate-pulse-slow" />
+
+                {/* Inner glow - enhanced */}
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-cyan-500/50 to-cyan-500/20 opacity-50 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+
+                {/* Logo image container with professional effects */}
+                <div className="relative h-full flex items-center">
+                  {/* Glow backdrop for logo - always visible */}
+                  <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400/40 via-blue-400/40 via-purple-400/40 to-pink-400/40 opacity-40 group-hover:opacity-100 blur-lg transition-opacity duration-500 rounded-xl" />
+
+                  {/* Logo image with white background - larger and wider */}
+                  <div className="relative bg-white rounded-xl shadow-2xl border-[3px] border-cyan-400/40 group-hover:border-cyan-400/90 transition-all duration-500 group-hover:shadow-[0_0_50px_rgba(56,189,248,1)] group-hover:scale-[1.03] h-[56px] lg:h-[72px] px-4 lg:px-6 flex items-center justify-center min-w-[140px] lg:min-w-[200px]">
+                    {/* White background base */}
+                    <div className="absolute inset-0 bg-white rounded-xl" />
+
+                    {/* Subtle gradient overlay for depth */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-slate-50/40 rounded-xl opacity-95" />
+
+                    {/* Animated pulse effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/0 via-cyan-400/30 to-cyan-400/0 rounded-xl animate-logo-pulse opacity-60" />
+
+                    {/* Shimmer overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-1000 rounded-xl" />
+
+                    {/* Animated border glow - always visible */}
+                    <div className="absolute -inset-0.5 rounded-xl border-[3px] border-cyan-400/40 group-hover:border-cyan-400/90 transition-all duration-500 pointer-events-none opacity-60 group-hover:opacity-100 animate-border-pulse" />
+
+                    {/* Logo image - significantly larger and wider */}
+                    <div className="relative z-10 flex items-center justify-center h-full w-full">
+                      <img
+                        src="/logo-maxtech.png"
+                        alt="MAXTECH Logo"
+                        className="h-[44px] w-auto sm:h-[52px] md:h-[56px] lg:h-[64px] xl:h-[68px] object-contain transition-all duration-500 group-hover:brightness-110 group-hover:scale-[1.08] group-hover:drop-shadow-[0_0_30px_rgba(56,189,248,0.9)]"
+                        style={{
+                          filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25))",
+                          maxHeight: "100%",
+                          maxWidth: "100%",
+                        }}
+                        onError={(e) => {
+                          // Fallback to text if image not found
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = "none";
+                          const fallback =
+                            target.parentElement?.querySelector(
+                              ".logo-fallback",
+                            );
+                          if (fallback) {
+                            (fallback as HTMLElement).style.display = "flex";
+                          }
+                        }}
+                      />
+                    </div>
+
+                    {/* Fallback text logo (hidden by default, shown if image fails to load) */}
+                    <div className="logo-fallback hidden items-center justify-center h-full w-full font-serif text-xl sm:text-2xl lg:text-3xl font-black tracking-tight bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 bg-clip-text text-transparent px-3 group-hover:from-cyan-500 group-hover:via-blue-500 group-hover:to-purple-500 transition-all duration-500">
+                      MAXTECH
+                    </div>
                   </div>
-                  <div className="relative bg-gradient-to-r from-cyan-300 via-white to-purple-300 bg-clip-text text-transparent group-hover:from-cyan-400 group-hover:via-blue-400 group-hover:to-purple-400 transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_20px_rgba(56,189,248,0.8)]">
-                    MAXTECH
+
+                  {/* Outer animated border glow - always visible */}
+                  <div className="absolute -inset-1 rounded-xl border-2 border-cyan-400/30 group-hover:border-cyan-400/70 transition-all duration-500 pointer-events-none opacity-50 group-hover:opacity-100 blur-sm animate-border-glow" />
+
+                  {/* Floating particles effect */}
+                  <div className="absolute -inset-4 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute top-0 left-1/2 w-1 h-1 bg-cyan-400 rounded-full animate-float-particle-1" />
+                    <div className="absolute bottom-0 right-1/4 w-1 h-1 bg-blue-400 rounded-full animate-float-particle-2" />
+                    <div className="absolute top-1/2 left-0 w-1 h-1 bg-purple-400 rounded-full animate-float-particle-3" />
                   </div>
                 </div>
               </div>
-              
-              {/* Sparkle icon with rotation */}
-              <div className="relative">
-                <div className="absolute inset-0 bg-cyan-400/30 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-slow" />
-                <Sparkles className="relative h-5 w-5 text-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:animate-spin-slow group-hover:scale-125 group-hover:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)]" />
+
+              {/* Sparkle icon with rotation - positioned next to logo */}
+              <div className="relative ml-3 hidden sm:block">
+                <div className="absolute inset-0 bg-cyan-400/40 blur-xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-slow" />
+                <Sparkles className="relative h-5 w-5 lg:h-6 lg:w-6 text-cyan-400 opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:animate-spin-slow group-hover:scale-125 group-hover:drop-shadow-[0_0_15px_rgba(56,189,248,1)]" />
               </div>
-              
+
               {/* Zap icon */}
-              <Zap className="h-4 w-4 text-purple-400 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:animate-bounce group-hover:scale-125" />
+              <Zap className="h-4 w-4 lg:h-5 lg:w-5 text-purple-400 opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:animate-bounce group-hover:scale-125 hidden sm:block ml-2" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -405,17 +480,19 @@ const Header = () => {
                 >
                   {/* Background glow */}
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/20 to-cyan-500/0 opacity-0 group-hover/nav:opacity-100 rounded-lg transition-opacity duration-500 blur-sm" />
-                  
+
                   {/* Border glow */}
                   <div className="absolute inset-0 border border-cyan-400/0 group-hover/nav:border-cyan-400/50 rounded-lg transition-all duration-500" />
-                  
+
                   <span className="relative z-10 text-slate-300 group-hover/nav:text-cyan-300 transition-colors duration-300 group-hover/nav:drop-shadow-[0_0_8px_rgba(56,189,248,0.8)]">
                     CLOTHING
                   </span>
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 group-hover/nav:w-full transition-all duration-500 rounded-full" />
                   <ChevronDown
                     className={`inline-block h-3.5 w-3.5 ml-1.5 text-cyan-400 transition-all duration-500 ${
-                      activeDropdown === "clothing" ? "rotate-180 scale-125" : "group-hover/nav:scale-125"
+                      activeDropdown === "clothing"
+                        ? "rotate-180 scale-125"
+                        : "group-hover/nav:scale-125"
                     }`}
                   />
                 </NavLink>
@@ -427,57 +504,60 @@ const Header = () => {
                       ? "opacity-100 translate-y-0 pointer-events-auto"
                       : "opacity-0 -translate-y-2 pointer-events-none"
                   }`}
-                  style={{ 
-                    isolation: 'isolate',
+                  style={{
+                    isolation: "isolate",
                   }}
                 >
-                  <div className="relative rounded-2xl p-4 w-72 mt-2 space-y-1 overflow-visible group/dropdown" style={{ zIndex: 9999 }}>
+                  <div
+                    className="relative rounded-2xl p-4 w-72 mt-2 space-y-1 overflow-visible group/dropdown"
+                    style={{ zIndex: 9999 }}
+                  >
                     {/* Enhanced background with better contrast */}
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-800/95 via-slate-900/98 to-slate-800/95 backdrop-blur-2xl rounded-2xl border border-cyan-400/40 shadow-[0_25px_80px_rgba(56,189,248,0.5)]" />
-                    
+
                     {/* Bright overlay for better readability */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/3 to-white/5 rounded-2xl" />
-                    
+
                     {/* Neon accent overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/15 via-blue-500/10 to-purple-500/15 rounded-2xl opacity-50" />
-                    
+
                     {/* Outer glow - enhanced */}
                     <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 via-blue-500/30 to-purple-500/30 rounded-2xl blur-xl opacity-60 group-hover/dropdown:opacity-100 transition-opacity duration-700" />
-                    
+
                     {/* Animated border with glow */}
                     <div className="absolute inset-0 rounded-2xl border-2 border-cyan-400/50 group-hover/dropdown:border-cyan-400/80 transition-all duration-500 shadow-[0_0_20px_rgba(56,189,248,0.4)]" />
-                    
+
                     {/* Inner glow ring */}
                     <div className="absolute inset-[2px] rounded-2xl bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5 opacity-0 group-hover/dropdown:opacity-100 transition-opacity duration-500" />
-                    
+
                     <div className="relative z-10 space-y-1">
-                    {clothingMenu.map((item, index) => (
-                      <Link
-                        key={item.to}
-                        to={item.to}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-500/20 hover:bg-gradient-to-r hover:from-cyan-500/20 hover:via-blue-500/15 hover:to-purple-500/20 transition-all duration-500 group/item relative overflow-hidden backdrop-blur-sm"
-                        style={{
-                          animationDelay: `${index * 50}ms`,
-                        }}
-                      >
-                        {/* Item background for better visibility */}
-                        <div className="absolute inset-0 bg-slate-800/30 rounded-xl opacity-0 group-hover/item:opacity-100 transition-opacity duration-500" />
-                        
-                        {/* Item glow */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/30 to-cyan-500/0 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 rounded-xl" />
-                        
-                        {/* Item border glow */}
-                        <div className="absolute inset-0 border border-cyan-400/0 group-hover/item:border-cyan-400/50 rounded-xl transition-all duration-500 shadow-[0_0_15px_rgba(56,189,248,0.3)]" />
-                        
-                        <span className="text-xl group-hover/item:scale-125 group-hover/item:rotate-12 transition-all duration-500 relative z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
-                          {item.icon}
-                        </span>
-                        <span className="flex-1 font-bold text-sm text-slate-200 group-hover/item:text-cyan-200 transition-colors duration-300 group-hover/item:drop-shadow-[0_0_10px_rgba(56,189,248,0.9)] relative z-10">
-                          {item.label}
-                        </span>
-                        <div className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover/item:w-8 transition-all duration-500 rounded-full relative z-10 shadow-[0_0_8px_rgba(56,189,248,0.6)]" />
-                      </Link>
-                    ))}
+                      {clothingMenu.map((item, index) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-500/20 hover:bg-gradient-to-r hover:from-cyan-500/20 hover:via-blue-500/15 hover:to-purple-500/20 transition-all duration-500 group/item relative overflow-hidden backdrop-blur-sm"
+                          style={{
+                            animationDelay: `${index * 50}ms`,
+                          }}
+                        >
+                          {/* Item background for better visibility */}
+                          <div className="absolute inset-0 bg-slate-800/30 rounded-xl opacity-0 group-hover/item:opacity-100 transition-opacity duration-500" />
+
+                          {/* Item glow */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/30 to-cyan-500/0 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 rounded-xl" />
+
+                          {/* Item border glow */}
+                          <div className="absolute inset-0 border border-cyan-400/0 group-hover/item:border-cyan-400/50 rounded-xl transition-all duration-500 shadow-[0_0_15px_rgba(56,189,248,0.3)]" />
+
+                          <span className="text-xl group-hover/item:scale-125 group-hover/item:rotate-12 transition-all duration-500 relative z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
+                            {item.icon}
+                          </span>
+                          <span className="flex-1 font-bold text-sm text-slate-200 group-hover/item:text-cyan-200 transition-colors duration-300 group-hover/item:drop-shadow-[0_0_10px_rgba(56,189,248,0.9)] relative z-10">
+                            {item.label}
+                          </span>
+                          <div className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover/item:w-8 transition-all duration-500 rounded-full relative z-10 shadow-[0_0_8px_rgba(56,189,248,0.6)]" />
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -496,17 +576,19 @@ const Header = () => {
                 >
                   {/* Background glow */}
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/20 to-purple-500/0 opacity-0 group-hover/nav:opacity-100 rounded-lg transition-opacity duration-500 blur-sm" />
-                  
+
                   {/* Border glow */}
                   <div className="absolute inset-0 border border-purple-400/0 group-hover/nav:border-purple-400/50 rounded-lg transition-all duration-500" />
-                  
+
                   <span className="relative z-10 text-slate-300 group-hover/nav:text-purple-300 transition-colors duration-300 group-hover/nav:drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]">
                     TECHNOLOGY
                   </span>
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 group-hover/nav:w-full transition-all duration-500 rounded-full" />
                   <ChevronDown
                     className={`inline-block h-3.5 w-3.5 ml-1.5 text-purple-400 transition-all duration-500 ${
-                      activeDropdown === "technology" ? "rotate-180 scale-125" : "group-hover/nav:scale-125"
+                      activeDropdown === "technology"
+                        ? "rotate-180 scale-125"
+                        : "group-hover/nav:scale-125"
                     }`}
                   />
                 </NavLink>
@@ -518,57 +600,60 @@ const Header = () => {
                       ? "opacity-100 translate-y-0 pointer-events-auto"
                       : "opacity-0 -translate-y-2 pointer-events-none"
                   }`}
-                  style={{ 
-                    isolation: 'isolate',
+                  style={{
+                    isolation: "isolate",
                   }}
                 >
-                  <div className="relative rounded-2xl p-4 w-72 mt-2 space-y-1 overflow-visible group/dropdown" style={{ zIndex: 9999 }}>
+                  <div
+                    className="relative rounded-2xl p-4 w-72 mt-2 space-y-1 overflow-visible group/dropdown"
+                    style={{ zIndex: 9999 }}
+                  >
                     {/* Enhanced background with better contrast */}
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-800/95 via-slate-900/98 to-slate-800/95 backdrop-blur-2xl rounded-2xl border border-purple-400/40 shadow-[0_25px_80px_rgba(168,85,247,0.5)]" />
-                    
+
                     {/* Bright overlay for better readability */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/3 to-white/5 rounded-2xl" />
-                    
+
                     {/* Neon accent overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/15 via-pink-500/10 to-rose-500/15 rounded-2xl opacity-50" />
-                    
+
                     {/* Outer glow - enhanced */}
                     <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/30 via-pink-500/30 to-rose-500/30 rounded-2xl blur-xl opacity-60 group-hover/dropdown:opacity-100 transition-opacity duration-700" />
-                    
+
                     {/* Animated border with glow */}
                     <div className="absolute inset-0 rounded-2xl border-2 border-purple-400/50 group-hover/dropdown:border-purple-400/80 transition-all duration-500 shadow-[0_0_20px_rgba(168,85,247,0.4)]" />
-                    
+
                     {/* Inner glow ring */}
                     <div className="absolute inset-[2px] rounded-2xl bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover/dropdown:opacity-100 transition-opacity duration-500" />
-                    
+
                     <div className="relative z-10 space-y-1">
-                    {technologyMenu.map((item, index) => (
-                      <Link
-                        key={item.to}
-                        to={item.to}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-purple-500/20 hover:bg-gradient-to-r hover:from-purple-500/20 hover:via-pink-500/15 hover:to-rose-500/20 transition-all duration-500 group/item relative overflow-hidden backdrop-blur-sm"
-                        style={{
-                          animationDelay: `${index * 50}ms`,
-                        }}
-                      >
-                        {/* Item background for better visibility */}
-                        <div className="absolute inset-0 bg-slate-800/30 rounded-xl opacity-0 group-hover/item:opacity-100 transition-opacity duration-500" />
-                        
-                        {/* Item glow */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/30 to-purple-500/0 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 rounded-xl" />
-                        
-                        {/* Item border glow */}
-                        <div className="absolute inset-0 border border-purple-400/0 group-hover/item:border-purple-400/50 rounded-xl transition-all duration-500 shadow-[0_0_15px_rgba(168,85,247,0.3)]" />
-                        
-                        <span className="relative z-10 group-hover/item:scale-125 group-hover/item:rotate-12 transition-all duration-500 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
-                          {item.icon}
-                        </span>
-                        <span className="flex-1 font-bold text-sm text-slate-200 group-hover/item:text-purple-200 transition-colors duration-300 group-hover/item:drop-shadow-[0_0_10px_rgba(168,85,247,0.9)] relative z-10">
-                          {item.label}
-                        </span>
-                        <div className="w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 group-hover/item:w-8 transition-all duration-500 rounded-full relative z-10 shadow-[0_0_8px_rgba(168,85,247,0.6)]" />
-                      </Link>
-                    ))}
+                      {technologyMenu.map((item, index) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-purple-500/20 hover:bg-gradient-to-r hover:from-purple-500/20 hover:via-pink-500/15 hover:to-rose-500/20 transition-all duration-500 group/item relative overflow-hidden backdrop-blur-sm"
+                          style={{
+                            animationDelay: `${index * 50}ms`,
+                          }}
+                        >
+                          {/* Item background for better visibility */}
+                          <div className="absolute inset-0 bg-slate-800/30 rounded-xl opacity-0 group-hover/item:opacity-100 transition-opacity duration-500" />
+
+                          {/* Item glow */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/30 to-purple-500/0 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 rounded-xl" />
+
+                          {/* Item border glow */}
+                          <div className="absolute inset-0 border border-purple-400/0 group-hover/item:border-purple-400/50 rounded-xl transition-all duration-500 shadow-[0_0_15px_rgba(168,85,247,0.3)]" />
+
+                          <span className="relative z-10 group-hover/item:scale-125 group-hover/item:rotate-12 transition-all duration-500 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
+                            {item.icon}
+                          </span>
+                          <span className="flex-1 font-bold text-sm text-slate-200 group-hover/item:text-purple-200 transition-colors duration-300 group-hover/item:drop-shadow-[0_0_10px_rgba(168,85,247,0.9)] relative z-10">
+                            {item.label}
+                          </span>
+                          <div className="w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 group-hover/item:w-8 transition-all duration-500 rounded-full relative z-10 shadow-[0_0_8px_rgba(168,85,247,0.6)]" />
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -584,46 +669,68 @@ const Header = () => {
                   key={link.to}
                   to={link.to}
                   className={`relative px-4 py-2.5 text-sm font-bold tracking-wider transition-all duration-500 group/nav rounded-lg ${
-                    link.color === "cyan" ? "active:text-cyan-400" : 
-                    link.color === "blue" ? "active:text-blue-400" : 
-                    "active:text-purple-400"
+                    link.color === "cyan"
+                      ? "active:text-cyan-400"
+                      : link.color === "blue"
+                        ? "active:text-blue-400"
+                        : "active:text-purple-400"
                   }`}
                   activeClassName={
-                    link.color === "cyan" ? "text-cyan-400" : 
-                    link.color === "blue" ? "text-blue-400" : 
-                    "text-purple-400"
+                    link.color === "cyan"
+                      ? "text-cyan-400"
+                      : link.color === "blue"
+                        ? "text-blue-400"
+                        : "text-purple-400"
                   }
                 >
                   {/* Background glow */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${
-                    link.color === "cyan" ? "from-cyan-500/0 via-cyan-500/20 to-cyan-500/0" :
-                    link.color === "blue" ? "from-blue-500/0 via-blue-500/20 to-blue-500/0" :
-                    "from-purple-500/0 via-purple-500/20 to-purple-500/0"
-                  } opacity-0 group-hover/nav:opacity-100 rounded-lg transition-opacity duration-500 blur-sm`} />
-                  
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-r ${
+                      link.color === "cyan"
+                        ? "from-cyan-500/0 via-cyan-500/20 to-cyan-500/0"
+                        : link.color === "blue"
+                          ? "from-blue-500/0 via-blue-500/20 to-blue-500/0"
+                          : "from-purple-500/0 via-purple-500/20 to-purple-500/0"
+                    } opacity-0 group-hover/nav:opacity-100 rounded-lg transition-opacity duration-500 blur-sm`}
+                  />
+
                   {/* Border glow */}
-                  <div className={`absolute inset-0 border ${
-                    link.color === "cyan" ? "border-cyan-400/0 group-hover/nav:border-cyan-400/50" :
-                    link.color === "blue" ? "border-blue-400/0 group-hover/nav:border-blue-400/50" :
-                    "border-purple-400/0 group-hover/nav:border-purple-400/50"
-                  } rounded-lg transition-all duration-500`} />
-                  
-                  <span className={`relative z-10 text-slate-300 group-hover/nav:${
-                    link.color === "cyan" ? "text-cyan-300" :
-                    link.color === "blue" ? "text-blue-300" :
-                    "text-purple-300"
-                  } transition-colors duration-300 group-hover/nav:drop-shadow-[0_0_8px_${
-                    link.color === "cyan" ? "rgba(56,189,248,0.8)" :
-                    link.color === "blue" ? "rgba(59,130,246,0.8)" :
-                    "rgba(168,85,247,0.8)"
-                  }]`}>
+                  <div
+                    className={`absolute inset-0 border ${
+                      link.color === "cyan"
+                        ? "border-cyan-400/0 group-hover/nav:border-cyan-400/50"
+                        : link.color === "blue"
+                          ? "border-blue-400/0 group-hover/nav:border-blue-400/50"
+                          : "border-purple-400/0 group-hover/nav:border-purple-400/50"
+                    } rounded-lg transition-all duration-500`}
+                  />
+
+                  <span
+                    className={`relative z-10 text-slate-300 group-hover/nav:${
+                      link.color === "cyan"
+                        ? "text-cyan-300"
+                        : link.color === "blue"
+                          ? "text-blue-300"
+                          : "text-purple-300"
+                    } transition-colors duration-300 group-hover/nav:drop-shadow-[0_0_8px_${
+                      link.color === "cyan"
+                        ? "rgba(56,189,248,0.8)"
+                        : link.color === "blue"
+                          ? "rgba(59,130,246,0.8)"
+                          : "rgba(168,85,247,0.8)"
+                    }]`}
+                  >
                     {link.label}
                   </span>
-                  <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r ${
-                    link.color === "cyan" ? "from-cyan-400 via-blue-400 to-purple-400" :
-                    link.color === "blue" ? "from-blue-400 via-cyan-400 to-purple-400" :
-                    "from-purple-400 via-pink-400 to-rose-400"
-                  } group-hover/nav:w-full transition-all duration-500 rounded-full`} />
+                  <span
+                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r ${
+                      link.color === "cyan"
+                        ? "from-cyan-400 via-blue-400 to-purple-400"
+                        : link.color === "blue"
+                          ? "from-blue-400 via-cyan-400 to-purple-400"
+                          : "from-purple-400 via-pink-400 to-rose-400"
+                    } group-hover/nav:w-full transition-all duration-500 rounded-full`}
+                  />
                 </NavLink>
               ))}
             </nav>
@@ -670,22 +777,22 @@ const Header = () => {
                       <div className="absolute top-full left-0 mt-2 w-80 max-h-[500px] overflow-hidden rounded-2xl border-2 border-cyan-400/50 bg-gradient-to-br from-slate-800/98 via-slate-900/98 to-slate-800/98 backdrop-blur-3xl shadow-[0_30px_100px_rgba(56,189,248,0.6)] z-[9999]">
                         {/* Outer glow - enhanced */}
                         <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/40 via-blue-500/40 to-purple-500/40 rounded-2xl blur-2xl opacity-70" />
-                        
+
                         {/* Main background with better contrast */}
                         <div className="absolute inset-0 bg-slate-900/95 rounded-2xl" />
-                        
+
                         {/* Bright overlay for better readability - enhanced */}
                         <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-white/5 to-white/8 rounded-2xl" />
-                        
+
                         {/* Subtle pattern overlay */}
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.08),transparent_70%)] rounded-2xl" />
-                        
+
                         {/* Neon accent overlay - more subtle */}
                         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-blue-500/8 to-purple-500/10 rounded-2xl" />
-                        
+
                         {/* Inner border glow */}
                         <div className="absolute inset-[1px] rounded-2xl border border-cyan-400/20" />
-                        
+
                         <div className="relative z-10 max-h-[500px] overflow-y-auto custom-scrollbar bg-slate-900/30">
                           {isSearching ? (
                             <div className="p-8 text-center bg-slate-900/40">
@@ -707,13 +814,21 @@ const Header = () => {
                                     <TrendingUp className="h-3.5 w-3.5 text-cyan-300 drop-shadow-[0_0_8px_rgba(56,189,248,0.6)]" />
                                   </div>
                                   <span className="text-cyan-200 drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]">
-                                    {searchResults.length} {searchResults.length === 1 ? 'result' : 'results'} found
+                                    {searchResults.length}{" "}
+                                    {searchResults.length === 1
+                                      ? "result"
+                                      : "results"}{" "}
+                                    found
                                   </span>
                                 </div>
                               </div>
-                              <div ref={searchResultsRef} className="p-2 bg-slate-900/20">
+                              <div
+                                ref={searchResultsRef}
+                                className="p-2 bg-slate-900/20"
+                              >
                                 {searchResults.map((product, index) => {
-                                  const isSelected = index === selectedResultIndex;
+                                  const isSelected =
+                                    index === selectedResultIndex;
 
                                   return (
                                     <Link
@@ -724,37 +839,41 @@ const Header = () => {
                                         setSearchQuery("");
                                       }}
                                       className={`group/item relative flex items-center gap-3 p-3 rounded-xl transition-all duration-300 mb-1.5 ${
-                                        isSelected 
-                                          ? "bg-gradient-to-r from-cyan-500/40 via-blue-500/30 to-purple-500/40 border-2 border-cyan-400/70 shadow-[0_0_25px_rgba(56,189,248,0.5)] scale-[1.02]" 
+                                        isSelected
+                                          ? "bg-gradient-to-r from-cyan-500/40 via-blue-500/30 to-purple-500/40 border-2 border-cyan-400/70 shadow-[0_0_25px_rgba(56,189,248,0.5)] scale-[1.02]"
                                           : "bg-slate-800/60 border-2 border-slate-700/50 hover:bg-slate-800/80 hover:border-cyan-400/50"
                                       }`}
                                     >
                                       {/* Item background - enhanced */}
-                                      <div className={`absolute inset-0 rounded-xl ${
-                                        isSelected 
-                                          ? "bg-gradient-to-r from-cyan-500/25 via-blue-500/20 to-purple-500/25" 
-                                          : "bg-slate-800/40 group-hover/item:bg-slate-800/60"
-                                      } transition-all duration-300`} />
-                                      
+                                      <div
+                                        className={`absolute inset-0 rounded-xl ${
+                                          isSelected
+                                            ? "bg-gradient-to-r from-cyan-500/25 via-blue-500/20 to-purple-500/25"
+                                            : "bg-slate-800/40 group-hover/item:bg-slate-800/60"
+                                        } transition-all duration-300`}
+                                      />
+
                                       {/* Bright overlay for selected */}
                                       {isSelected && (
                                         <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-white/10 rounded-xl" />
                                       )}
-                                      
+
                                       {/* Item glow - enhanced */}
                                       {isSelected && (
                                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/40 to-cyan-500/0 rounded-xl opacity-100 shadow-[inset_0_0_20px_rgba(56,189,248,0.3)]" />
                                       )}
-                                      
+
                                       {/* Hover glow effect */}
                                       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/20 to-cyan-500/0 rounded-xl opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
-                                      
+
                                       {/* Product Image */}
-                                      <div className={`relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 bg-slate-900/80 backdrop-blur-sm transition-all duration-300 ${
-                                        isSelected 
-                                          ? "border-cyan-400/70 shadow-[0_0_15px_rgba(56,189,248,0.5)]" 
-                                          : "border-slate-700/60 group-hover/item:border-cyan-400/60"
-                                      }`}>
+                                      <div
+                                        className={`relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 bg-slate-900/80 backdrop-blur-sm transition-all duration-300 ${
+                                          isSelected
+                                            ? "border-cyan-400/70 shadow-[0_0_15px_rgba(56,189,248,0.5)]"
+                                            : "border-slate-700/60 group-hover/item:border-cyan-400/60"
+                                        }`}
+                                      >
                                         <img
                                           src={product.image}
                                           alt={product.name}
@@ -773,38 +892,48 @@ const Header = () => {
                                           </div>
                                         )}
                                       </div>
-                                      
+
                                       {/* Product Info */}
                                       <div className="flex-1 min-w-0 relative z-10">
-                                        <h4 className={`text-sm font-bold mb-1.5 truncate ${
-                                          isSelected 
-                                            ? "text-cyan-100 drop-shadow-[0_0_12px_rgba(56,189,248,0.8)]" 
-                                            : "text-slate-100 group-hover/item:text-cyan-200"
-                                        } transition-colors duration-300`}>
+                                        <h4
+                                          className={`text-sm font-bold mb-1.5 truncate ${
+                                            isSelected
+                                              ? "text-cyan-100 drop-shadow-[0_0_12px_rgba(56,189,248,0.8)]"
+                                              : "text-slate-100 group-hover/item:text-cyan-200"
+                                          } transition-colors duration-300`}
+                                        >
                                           {product.name}
                                         </h4>
-                                        <p className={`text-xs mb-2 line-clamp-1 ${
-                                          isSelected 
-                                            ? "text-slate-300" 
-                                            : "text-slate-400 group-hover/item:text-slate-300"
-                                        } transition-colors duration-300`}>
+                                        <p
+                                          className={`text-xs mb-2 line-clamp-1 ${
+                                            isSelected
+                                              ? "text-slate-300"
+                                              : "text-slate-400 group-hover/item:text-slate-300"
+                                          } transition-colors duration-300`}
+                                        >
                                           {product.shortDescription}
                                         </p>
                                         <div className="flex items-center gap-2">
-                                          <span className={`text-xs px-2 py-0.5 rounded-md border ${
-                                            isSelected 
-                                              ? "text-cyan-200 border-cyan-400/40 bg-cyan-500/10" 
-                                              : "text-slate-400 border-slate-700/50 bg-slate-800/50 group-hover/item:text-slate-300 group-hover/item:border-cyan-400/30"
-                                          } transition-all duration-300`}>
+                                          <span
+                                            className={`text-xs px-2 py-0.5 rounded-md border ${
+                                              isSelected
+                                                ? "text-cyan-200 border-cyan-400/40 bg-cyan-500/10"
+                                                : "text-slate-400 border-slate-700/50 bg-slate-800/50 group-hover/item:text-slate-300 group-hover/item:border-cyan-400/30"
+                                            } transition-all duration-300`}
+                                          >
                                             {categoryLabels[product.category]}
                                           </span>
                                         </div>
                                       </div>
-                                      
+
                                       {/* Arrow indicator */}
-                                      <div className={`flex-shrink-0 transition-all duration-300 ${
-                                        isSelected ? "translate-x-1 opacity-100" : "translate-x-0 opacity-0 group-hover/item:opacity-100"
-                                      }`}>
+                                      <div
+                                        className={`flex-shrink-0 transition-all duration-300 ${
+                                          isSelected
+                                            ? "translate-x-1 opacity-100"
+                                            : "translate-x-0 opacity-0 group-hover/item:opacity-100"
+                                        }`}
+                                      >
                                         <ChevronDown className="h-4 w-4 text-cyan-400 rotate-[-90deg]" />
                                       </div>
                                     </Link>
@@ -821,7 +950,9 @@ const Header = () => {
                               <p className="text-sm font-bold text-slate-300 mb-1 drop-shadow-[0_0_8px_rgba(56,189,248,0.3)]">
                                 No results found
                               </p>
-                              <p className="text-xs text-slate-400">Try a different search term</p>
+                              <p className="text-xs text-slate-400">
+                                Try a different search term
+                              </p>
                             </div>
                           )}
                         </div>
@@ -891,7 +1022,7 @@ const Header = () => {
           {/* Mobile menu background effects */}
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/10 opacity-50 transition-opacity duration-500" />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(56,189,248,0.15)_50%,transparent_100%)] animate-wave-header" />
-          
+
           {/* Glowing orbs for mobile */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-0 left-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-[60px]" />
@@ -1086,6 +1217,46 @@ const Header = () => {
           50% { transform: translateY(-8px); }
         }
         
+        /* Logo Pulse Animation */
+        @keyframes logo-pulse {
+          0%, 100% { opacity: 0.4; transform: scaleX(1); }
+          50% { opacity: 0.8; transform: scaleX(1.05); }
+        }
+        
+        /* Border Pulse Animation */
+        @keyframes border-pulse {
+          0%, 100% { opacity: 0.6; box-shadow: 0 0 10px rgba(56, 189, 248, 0.4); }
+          50% { opacity: 1; box-shadow: 0 0 20px rgba(56, 189, 248, 0.8), 0 0 30px rgba(56, 189, 248, 0.6); }
+        }
+        
+        /* Border Glow Animation */
+        @keyframes border-glow {
+          0%, 100% { opacity: 0.5; filter: brightness(1); }
+          50% { opacity: 1; filter: brightness(1.3); }
+        }
+        
+        /* Floating Particles */
+        @keyframes float-particle-1 {
+          0% { transform: translate(0, 0) scale(0); opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { transform: translate(20px, -30px) scale(1.5); opacity: 0; }
+        }
+        
+        @keyframes float-particle-2 {
+          0% { transform: translate(0, 0) scale(0); opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { transform: translate(-25px, 25px) scale(1.3); opacity: 0; }
+        }
+        
+        @keyframes float-particle-3 {
+          0% { transform: translate(0, 0) scale(0); opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { transform: translate(30px, 15px) scale(1.4); opacity: 0; }
+        }
+        
         /* Animation Classes */
         .animate-gradient-xy-header {
           background-size: 400% 400%;
@@ -1150,6 +1321,30 @@ const Header = () => {
         
         .animate-bounce {
           animation: bounce 2s ease-in-out infinite;
+        }
+        
+        .animate-logo-pulse {
+          animation: logo-pulse 3s ease-in-out infinite;
+        }
+        
+        .animate-border-pulse {
+          animation: border-pulse 2s ease-in-out infinite;
+        }
+        
+        .animate-border-glow {
+          animation: border-glow 2.5s ease-in-out infinite;
+        }
+        
+        .animate-float-particle-1 {
+          animation: float-particle-1 3s ease-in-out infinite;
+        }
+        
+        .animate-float-particle-2 {
+          animation: float-particle-2 3.5s ease-in-out infinite 0.5s;
+        }
+        
+        .animate-float-particle-3 {
+          animation: float-particle-3 4s ease-in-out infinite 1s;
         }
         
         @keyframes slide-in-right {
