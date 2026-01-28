@@ -295,7 +295,7 @@ const Footer = () => {
                     </div>
                   </a>
                   <a 
-                    href="mailto:info@maxtechimportexport.com"
+                    href="mailto:info@maxtechimport.com"
                     className="group/item flex gap-3 items-center cursor-pointer"
                   >
                     <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-purple-400/30 bg-slate-900/80 backdrop-blur-xl text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.2)] group-hover/item:border-purple-400/60 group-hover/item:shadow-[0_0_25px_rgba(168,85,247,0.4)] group-hover/item:scale-110 transition-all duration-300">
@@ -306,7 +306,7 @@ const Footer = () => {
                         Email
                       </p>
                       <span className="text-slate-300 group-hover/item:text-purple-300 transition-colors inline-flex items-center gap-2">
-                        <span className="break-all">info@maxtechimportexport.com</span>
+                        <span className="break-all">info@maxtechimport.com</span>
                         <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex-shrink-0" />
                       </span>
                     </div>

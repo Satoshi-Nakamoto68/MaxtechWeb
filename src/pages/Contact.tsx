@@ -97,7 +97,7 @@ const Contact = () => {
 
                   {/* Email */}
                   <a 
-                    href="mailto:info@maxtechimportexport.com"
+                    href="mailto:info@maxtechimport.com"
                     className="group/item flex items-start gap-4 cursor-pointer"
                   >
                     <div className="p-3 border border-purple-400/30 bg-purple-500/20 text-purple-400 rounded-lg shadow-[0_0_15px_rgba(168,85,247,0.3)] group-hover/item:scale-110 group-hover/item:border-purple-400/60 group-hover/item:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all duration-300">
@@ -106,7 +106,7 @@ const Contact = () => {
                     <div className="flex-1 min-w-0">
                       <h3 className="font-bold mb-2 text-white group-hover/item:text-purple-200 transition-colors select-none">Email</h3>
                       <span className="text-slate-300 group-hover/item:text-purple-200 transition-colors inline-flex items-center gap-2 select-none">
-                        <span className="break-all">info@maxtechimportexport.com</span>
+                        <span className="break-all">info@maxtechimport.com</span>
                         <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex-shrink-0" />
                       </span>
                     </div>

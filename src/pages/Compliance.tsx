@@ -230,7 +230,7 @@ const Compliance = () => {
                     Contact Information
                   </p>
                   <a 
-                    href="mailto:info@maxtechimportexport.com"
+                    href="mailto:info@maxtechimport.com"
                     className="group/contact flex items-center gap-3 rounded-xl border border-purple-400/30 bg-slate-900/80 backdrop-blur-xl p-3 hover:border-purple-400/60 hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-all duration-300"
                   >
                     <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-purple-400/30 bg-purple-500/20 text-purple-400 group-hover/contact:scale-110 transition-transform duration-300">
@@ -241,7 +241,7 @@ const Compliance = () => {
                         Email
                       </p>
                       <p className="text-sm font-semibold text-white group-hover/contact:text-purple-300 transition-colors break-all">
-                        info@maxtechimportexport.com
+                        info@maxtechimport.com
                       </p>
                     </div>
                     <ArrowRight className="h-3 w-3 text-purple-400 opacity-0 group-hover/contact:opacity-100 transition-opacity duration-300 flex-shrink-0" />
@@ -276,7 +276,7 @@ const Compliance = () => {
             { label: "Status / Legal form", value: "Hong Kong Registered Company", color: "cyan" },
             { label: "Established", value: "2026", color: "blue" },
             { label: "Phone", value: "+852 47485904", color: "purple", link: "tel:+85247485904" },
-            { label: "Email", value: "info@maxtechimportexport.com", color: "pink", link: "mailto:info@maxtechimportexport.com" },
+            { label: "Email", value: "info@maxtechimport.com", color: "pink", link: "mailto:info@maxtechimport.com" },
             { label: "Document Access", value: "Available upon request", color: "cyan" },
             { label: "Service Level", value: "Professional", color: "blue" },
           ].map((item) => {
@@ -486,14 +486,14 @@ const Compliance = () => {
               </ul>
               <div className="flex flex-wrap gap-4 text-sm">
                 <a 
-                  href="mailto:info@maxtechimportexport.com"
+                  href="mailto:info@maxtechimport.com"
                   className="flex items-center gap-2 group/item cursor-pointer"
                 >
                   <div className="p-2 rounded-lg border border-purple-400/30 bg-purple-500/10 group-hover/item:border-purple-400/60 group-hover/item:scale-110 transition-all duration-300">
                     <Mail className="h-4 w-4 text-purple-400 group-hover/item:drop-shadow-[0_0_10px_rgba(168,85,247,0.6)]" />
                   </div>
                   <span className="text-slate-300 group-hover/item:text-purple-300 transition-colors duration-300 inline-flex items-center gap-2">
-                    <span>info@maxtechimportexport.com</span>
+                    <span>info@maxtechimport.com</span>
                     <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
                   </span>
                 </a>

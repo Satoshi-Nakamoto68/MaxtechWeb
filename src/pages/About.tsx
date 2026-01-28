@@ -505,14 +505,14 @@ const About = () => {
               </form>
               <div className="flex flex-wrap gap-4 text-sm mt-6">
                 <a 
-                  href="mailto:info@maxtechimportexport.com"
+                  href="mailto:info@maxtechimport.com"
                   className="flex items-center gap-2 group/item cursor-pointer"
                 >
                   <div className="p-2 rounded-lg border border-purple-400/30 bg-purple-500/10 group-hover/item:border-purple-400/60 group-hover/item:scale-110 transition-all duration-300">
                     <Mail className="h-4 w-4 text-purple-400 group-hover/item:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]" />
                   </div>
                   <span className="text-slate-300 group-hover/item:text-purple-300 transition-colors duration-300 inline-flex items-center gap-2">
-                    <span>info@maxtechimportexport.com</span>
+                    <span>info@maxtechimport.com</span>
                     <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
                   </span>
                 </a>
