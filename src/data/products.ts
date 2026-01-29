@@ -495,6 +495,212 @@ export const products: Product[] = [
       onSale: true,
       salePrice: 37
     },
+    {
+      id: "men-022",
+      name: "NordicWear Classic Oxford Shirt",
+      category: "men",
+      image: "https://s.alicdn.com/@sc04/kf/H23ae5890219a44e398e20143214ed2f3Q.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/H0158f9a31dec405e926e449cabb02fcdq.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/H8f8f77fe987d4953afedc4d26d8216a8n.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hc7e93e14b21c47048c7d8d7eda4023abZ.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H62bb6a72346d45219aa09f050a2bdd89j.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H08a9b128afca449aa7993ba3b1b52c98O.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Classic button-down oxford shirt in crisp cotton fabric.",
+      fullDescription:
+        "The NordicWear Oxford Shirt features a traditional button-down collar, reinforced seams, and breathable cotton construction. Perfect for business casual or smart casual occasions.",
+      rating: 4.6,
+      isNew: false,
+      price: 38,
+      onSale: true,
+      salePrice: 32
+    },
+    {
+      id: "men-023",
+      name: "TerraFlex Slim Fit Chinos",
+      category: "men",
+      image: "https://s.alicdn.com/@sc04/kf/Hc7c828abff7649799cdad56ccbe036f62.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/H3884f1f0b8344e0a85a778e51bb157b6t.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/H2c2d904cffa64a76be48d9e5bdd7d00cJ.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H4a7de6d154354130a66fd12975e28ac3o.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hbd3f84f6e10e407f90b044bbea4b5a6fl.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Ha2e346efdbee44d388a2c72ccae76e67a.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Slim-fit chinos with stretch fabric for comfort and mobility.",
+      fullDescription:
+        "TerraFlex Chinos combine classic styling with modern stretch technology. Features a tapered leg, wrinkle-resistant fabric, and versatile colors suitable for office or casual wear.",
+      rating: 4.7,
+      isNew: true,
+      price: 45,
+      onSale: false
+    },
+    {
+      id: "men-024",
+      name: "CoastalBreeze Hooded Sweatshirt",
+      category: "men",
+      image: "https://s.alicdn.com/@sc04/kf/H52185fd6152b437bbae847404d95ca76V.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/Hc9176c25e7ff4be1b6871b65d29cd4fcR.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/H6d1b356c48c6447c9958ecbe0d2f3335p.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H085fe4a4d1df42e5ac4887ea5e0f9e6dV.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H7a4a24113a1e49efb7e7ec5a13bf521fA.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H89a29cc5f53e4e0da12f8fc13a409381g.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Comfortable hooded sweatshirt with soft fleece lining.",
+      fullDescription:
+        "CoastalBreeze Hoodie features a relaxed fit, adjustable drawstring hood, and soft cotton-polyester blend. Perfect for layering during cooler months or casual weekend wear.",
+      rating: 4.8,
+      isNew: true,
+      price: 42,
+      onSale: true,
+      salePrice: 36
+    },
+    {
+      id: "men-025",
+      name: "MetroStyle Bomber Jacket",
+      category: "men",
+      image: "https://s.alicdn.com/@sc04/kf/H35c3b90373024306b6437c1b80c05c72S.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/Ha0ca5224d2434e94a9f25162ef8ed127b.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Hc2e054f36fb849faa8693325b7eb2ace6.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hcec52446d5274f4ca0fdc380756bb6afV.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hc3ad84bf750242a5b32f67a9fbc45a7br.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H22fab5f7df984269bedd32527025f1fdD.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Modern bomber jacket with ribbed cuffs and hem.",
+      fullDescription:
+        "MetroStyle Bomber combines classic aviation-inspired design with contemporary materials. Features a lightweight construction, zippered pockets, and versatile styling for transitional weather.",
+      rating: 4.5,
+      isNew: false,
+      price: 68,
+      onSale: true,
+      salePrice: 58
+    },
+    {
+      id: "men-026",
+      name: "ProForm Polo Shirt",
+      category: "men",
+      image: "https://s.alicdn.com/@sc04/kf/A84a6226bb29240afa4a3f618a217a977a.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/A7a1d2f87e08c4cf7b94ed5bd225f7803U.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Abb22fb0f7945424aa3711744cc75cd8bP.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Aac00b2a6ce964de193656d7e3908757au.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Acf6b92fd4a064d5c9089a5d4b6cf4da0u.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/A1a876b06d0d24fcbbfb11e092a91b1e7b.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Classic polo shirt in moisture-wicking fabric.",
+      fullDescription:
+        "ProForm Polo features a three-button placket, ribbed collar, and breathable pique fabric. Ideal for golf, casual office wear, or weekend activities.",
+      rating: 4.6,
+      isNew: true,
+      price: 35,
+      onSale: false
+    },
+    {
+      id: "men-027",
+      name: "SummitPeak Cargo Shorts",
+      category: "men",
+      image: "https://s.alicdn.com/@sc04/kf/H8606c19f94fb40db98152678b86f05edT.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/H5d50cbfd87994710a9de86e88728499db.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/H2c46862f787a4625abb89ee0a1589a910.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H182d39b270ce4bda9587c8f6281f30e4m.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/He5776e5f0f0b433681445607a0d45847w.jpg?avif=close&webp=close",
+      ],
+      shortDescription: "Functional cargo shorts with multiple pockets.",
+      fullDescription:
+        "SummitPeak Cargo Shorts offer practical storage with side cargo pockets, durable cotton-blend fabric, and a comfortable fit. Perfect for outdoor activities or casual summer wear.",
+      rating: 4.5,
+      isNew: false,
+      price: 32,
+      onSale: true,
+      salePrice: 27
+    },
+    {
+      id: "men-028",
+      name: "HeritageWool V-Neck Sweater",
+      category: "men",
+      image: "https://s.alicdn.com/@sc04/kf/Hb36d39e7157c4bd68215e08930e652eaK.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/H3e01e75bad5f40ab922a9534f1ec61fbA.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/H74aab8f23e9a4e198087c869cffa1eb2Q.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hb2d0658e4d6242d1aa3d42c707861229V.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H1b9beb9d92dc44f9bbd708576d2beea2a.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H0c3d8c9ea9ff4d41a8febe9cbad14269h.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Classic V-neck sweater in soft wool blend.",
+      fullDescription:
+        "HeritageWool V-Neck features a timeless design with soft acrylic-wool blend, ribbed trim, and versatile styling. Perfect for layering over dress shirts or wearing casually.",
+      rating: 4.7,
+      isNew: true,
+      price: 48,
+      onSale: true,
+      salePrice: 41
+    },
+    {
+      id: "men-029",
+      name: "UrbanEdge Denim Jacket",
+      category: "men",
+      image: "https://s.alicdn.com/@sc04/kf/H67781ed61d514a9984a0d2867d9a3898o.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/He5ece44b77c9454984ee3334104535cfZ.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/H64a02c84475341bfae1ab1ec7b6d3a91C.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H82619cb19b96435986a3f4afb95a5ec3V.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H4aecd95ab8de49c6876f43f1209fe140e.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hc2fc9e3c37b7440eaa6fc5ff79567378c.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Classic denim jacket with vintage wash finish.",
+      fullDescription:
+        "UrbanEdge Denim Jacket features a traditional trucker style with button closure, chest pockets, and a medium-wash finish. Versatile layering piece for spring and fall seasons.",
+      rating: 4.6,
+      isNew: false,
+      price: 55,
+      onSale: true,
+      salePrice: 47
+    },
+    {
+      id: "men-030",
+      name: "FlexFit Athletic Joggers",
+      category: "men",
+      image: "https://s.alicdn.com/@sc04/kf/H9f54577e62bc4bbbb90f2f9f4356b56fH.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/Hd24953b0849849f9b212312c7455dfccU.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Hb005e97106bc4c5f9eb0b96b45e6bd4dV.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Haae0127cee024c6f93ba8b694c955a330.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Ha56e8340f4da4e5fb4b741eb11c39bf1o.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H22652dded0d942f8940be0e80cf0a0f1L.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Comfortable joggers with elastic waistband and cuffs.",
+      fullDescription:
+        "FlexFit Joggers combine athletic performance with casual style. Features moisture-wicking fabric, adjustable drawstring waist, and tapered leg with elastic cuffs for a modern fit.",
+      rating: 4.8,
+      isNew: true,
+      price: 39,
+      onSale: false
+    },
+    {
+      id: "men-031",
+      name: "ClassicCraft Linen Shirt",
+      category: "men",
+      image: "https://s.alicdn.com/@sc04/kf/H22169f12cb3d46e1855174d5d7f170fcs.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/H505a4514e6634105999a602c151f219fx.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Hb0487787323c4ee288636e554fe26025o.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H714fa04746314f4d9f4574a770523780B.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H8bedcbb8acbf4250b868904373f72664c.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H73f5835033e84e1b8448e15a8ecec7c4q.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Breathable linen shirt perfect for warm weather.",
+      fullDescription:
+        "ClassicCraft Linen Shirt offers natural breathability and a relaxed fit. Features a button-down collar, short sleeves, and wrinkle-resistant treatment for easy care.",
+      rating: 4.5,
+      isNew: false,
+      price: 36,
+      onSale: true,
+      salePrice: 30
+    },
     
   
   {
@@ -996,6 +1202,211 @@ export const products: Product[] = [
       onSale: true,
       salePrice: 28
     },
+    {
+      id: "women-022",
+      name: "BellaRose Floral Midi Dress",
+      category: "women",
+      image: "https://s.alicdn.com/@sc04/kf/Hdb1133db33cf45cb84889b330967d725W.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/H101e11d905a64448be3513718a42a4fcm.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Hed82dd0e3c4e4375b6ac757efa939bddw.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hcb1453fdeeec4b37b09058c06c8e9076U.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H72adf77bb2a1456a8dab6a025f9bf83cu.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H7049d32923744a86a1a61e8928050596P.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Elegant floral print midi dress with A-line silhouette.",
+      fullDescription:
+        "BellaRose Floral Midi Dress features a delicate floral pattern, comfortable A-line cut, and adjustable straps. Perfect for garden parties, brunches, or casual daytime events.",
+      rating: 4.7,
+      isNew: true,
+      price: 48,
+      onSale: false
+    },
+    {
+      id: "women-023",
+      name: "EleganceWrap Satin Blouse",
+      category: "women",
+      image: "https://s.alicdn.com/@sc04/kf/H115345be1da6486ea6bfb1165dbb918c6.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/He2f714def64948c289bfb2b75fa62454x.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Hac1cfd96742d4d5d8d8891cede99a447f.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H92cd41d889084e4b85231b9dcca2e142u.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H4729acb68e46432591b457d302a384c5G.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hbe1245c8af1d441290fcabe6d261094eK.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Luxurious satin blouse with wrap-style front detail.",
+      fullDescription:
+        "EleganceWrap Satin Blouse offers a sophisticated wrap design, flowing sleeves, and lustrous satin fabric. Versatile piece that pairs beautifully with trousers or skirts for office or evening wear.",
+      rating: 4.6,
+      isNew: false,
+      price: 42,
+      onSale: true,
+      salePrice: 36
+    },
+    {
+      id: "women-024",
+      name: "ComfortFit Wide Leg Pants",
+      category: "women",
+      image: "https://s.alicdn.com/@sc04/kf/H7e44cf6c44cd4e58b3c66a400ed903ffN.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/Hc0c70d313f4241ee9d94c1cfb0f07aefb.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Hc2b8262e5e8040ac9d4885093f304697I.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H12fd1a02faba46248521a9d21277c652J.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H985853f582154901b403b7393a3e8a62C.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hdf27a04c348b440b9b0c22030dc3e6c2t.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Stylish wide-leg trousers with elastic waistband.",
+      fullDescription:
+        "ComfortFit Wide Leg Pants feature a relaxed fit, high-waisted design, and flowing silhouette. Made from soft, breathable fabric perfect for all-day comfort in professional or casual settings.",
+      rating: 4.8,
+      isNew: true,
+      price: 38,
+      onSale: false
+    },
+    {
+      id: "women-025",
+      name: "ChicStyle Knitted Cardigan",
+      category: "women",
+      image: "https://s.alicdn.com/@sc04/kf/H1d02aba059354f4aafa013ee748eb11bH.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/Hbced0e27bb4c404aa43f4aacbf6d7eacS.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Hf46e75ac70b747e98221a95a655d676dR.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H76cce12f578b4faaa0a33fb4becfc9e0C.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hb9464fd2e51840c4b7136717469e2d84b.jpg?avif=close&webp=close",
+      ],
+      shortDescription: "Cozy knitted cardigan with button-front closure.",
+      fullDescription:
+        "ChicStyle Knitted Cardigan offers a classic design with soft yarn, ribbed trim, and versatile length. Perfect for layering over dresses or pairing with jeans for a casual-chic look.",
+      rating: 4.7,
+      isNew: true,
+      price: 45,
+      onSale: true,
+      salePrice: 39
+    },
+    {
+      id: "women-026",
+      name: "GracefulFlow Maxi Skirt",
+      category: "women",
+      image: "https://s.alicdn.com/@sc04/kf/H8e84a56e705a4af498a53dd9e55906f90.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/H86cbb10b83df496996f53776fdbc3e87C.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Hbe073e6433664e0195199cd4d449d4f0U.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H56cf7fc8217d4854b70760b2b1fc1a088.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H04234c8afb1743da9cdcf9e131ef3defj.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H56eb018593c445dfa977a9ce2fc1242fc.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Flowing maxi skirt with elegant drape and side slit.",
+      fullDescription:
+        "GracefulFlow Maxi Skirt features a floor-length design, comfortable elastic waistband, and graceful movement. Made from lightweight fabric that flows beautifully with every step.",
+      rating: 4.6,
+      isNew: false,
+      price: 35,
+      onSale: true,
+      salePrice: 29
+    },
+    {
+      id: "women-027",
+      name: "SoftTouch Cotton T-Shirt",
+      category: "women",
+      image: "https://s.alicdn.com/@sc04/kf/A644a0112ecc54ba7b325b8dd83a786d0Z.png?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/A44366c7b0e5d486385ea2ca1552bed8b5.png?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/A06d881100edf47ab900b698db85361fdb.png?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/A7b955be97c4345d28a37ff6406bb3104q.png?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Aa912d7cca5384b69918ddc5583841284T.png?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/A9dd81cf1c23c463ba1d8d82505a5fda7X.png?avif=close&webp=close"
+      ],
+      shortDescription: "Essential cotton tee with relaxed fit and soft fabric.",
+      fullDescription:
+        "SoftTouch Cotton T-Shirt offers premium cotton material, reinforced seams, and a comfortable relaxed fit. Perfect for everyday wear, layering, or casual weekend outfits.",
+      rating: 4.8,
+      isNew: true,
+      price: 22,
+      onSale: false
+    },
+    {
+      id: "women-028",
+      name: "VelvetDream Wrap Dress",
+      category: "women",
+      image: "https://s.alicdn.com/@sc04/kf/Af6c90c91dcb045e998a1617b218a61ae5.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/Ab063460fb63b4649a93dac7d822f6a02g.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/A3fb6a7ad202c402cb17e1568c3505333e.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/A2431856dd5e649f7a0fc51c65c15f70ea.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Aa8b9acd210d24a1786d3f58f6d6d6804e.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/A81aec5c2215845b2b2a4aac0f36b7dc3j.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Luxurious velvet wrap dress with flattering silhouette.",
+      fullDescription:
+        "VelvetDream Wrap Dress features a soft velvet fabric, adjustable wrap tie, and elegant midi length. Perfect for date nights, special occasions, or evening events with its sophisticated appeal.",
+      rating: 4.9,
+      isNew: true,
+      price: 65,
+      onSale: true,
+      salePrice: 55
+    },
+    {
+      id: "women-029",
+      name: "BreezeLinen Summer Top",
+      category: "women",
+      image: "https://s.alicdn.com/@sc04/kf/H92eef3f0da2447beb51d28968e3d27839.png?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/H36273aeb3bcf4c3784a261ed5b9c78c9D.png?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/H486b02ef7d4d4dd18c3e135bee50d78bL.png?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H0be90cd85b05435eababafc97cc5946bh.png?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hd2476c7389224c788762b019f659f57dY.png?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H35fd8d52df694201af9c57b149eef994o.png?avif=close&webp=close"
+      ],
+      shortDescription: "Breathable linen top with relaxed fit and button detail.",
+      fullDescription:
+        "BreezeLinen Summer Top offers natural linen fabric, comfortable loose fit, and subtle button accents. Ideal for warm weather, beach outings, or casual summer styling.",
+      rating: 4.5,
+      isNew: false,
+      price: 28,
+      onSale: true,
+      salePrice: 24
+    },
+    {
+      id: "women-030",
+      name: "ElegantEdge Tailored Blazer",
+      category: "women",
+      image: "https://s.alicdn.com/@sc04/kf/A222351c9003b4efcaf3c7888f1a83a3dP.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/A7b5693bed3b34fc8af0d06fde19e532bu.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Ab6e8c5594b8e4935894dea524d9555698.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Aa0391894486b4dd9a197e5e1c933654e4.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Aaaecab1ba24c450bb85851e42ed43069I.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Afc2e3b48d96e4a8c9e673298b8840db7A.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Structured blazer with modern cut and professional finish.",
+      fullDescription:
+        "ElegantEdge Tailored Blazer features a structured silhouette, notched lapels, and quality fabric blend. Perfect for office wear, business meetings, or smart casual occasions.",
+      rating: 4.7,
+      isNew: true,
+      price: 58,
+      onSale: false
+    },
+    {
+      id: "women-031",
+      name: "CozyNights Pajama Set",
+      category: "women",
+      image: "https://s.alicdn.com/@sc04/kf/H0192f8ea56584e0394cb72725b164481a.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/He93cb9ad6f554fddb4f8b8d4a9da17a0h.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/H05b3221821cb4800929f9ec17a716deeX.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H7895839f63454fdcab1b2d39a13e16dbb.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Ha09037585f8340768b1b9c888c2f3c3cE.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/He57121af01f0446db157c4e168f96aaaU.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Comfortable pajama set with soft fabric and cute print.",
+      fullDescription:
+        "CozyNights Pajama Set includes a button-front top and matching shorts in soft cotton blend. Features charming print patterns and comfortable fit for restful nights at home.",
+      rating: 4.6,
+      isNew: true,
+      price: 32,
+      onSale: true,
+      salePrice: 27
+    },
     
   
   {
@@ -1450,6 +1861,212 @@ export const products: Product[] = [
       price: 18,
       onSale: true,
       salePrice: 15
+    },
+    {
+      id: "acc-022",
+      name: "StyleCraft Leather Wallet",
+      category: "accessories",
+      image: "https://s.alicdn.com/@sc04/kf/He885c73667a04992846e3a226dcc63eeQ.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/H3d746507effb4f81ae4ab31529ac8b954.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Hec01fecb36434f869791c5e086657fe0V.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H97db32a36ca64fa3a3bc4bfe3fc97208v.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H7273d612a8734e65a645557f984343154.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H9a888c57137c49f6abeb5e407f7c2372t.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Slim leather wallet with RFID blocking technology.",
+      fullDescription:
+        "StyleCraft Leather Wallet features genuine leather construction, multiple card slots, cash compartment, and RFID blocking protection. Compact design fits comfortably in pockets.",
+      rating: 4.7,
+      isNew: true,
+      price: 24,
+      onSale: false
+    },
+    {
+      id: "acc-023",
+      name: "UrbanGrip Phone Case",
+      category: "accessories",
+      image: "https://s.alicdn.com/@sc04/kf/H913cd4ee515543388ce92cee0362c592M.png?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/H8405bbec74714a81aa90a5a301f7942ei.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Hef2a772b67b64c25b8ec186fd88088d3z.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H2ba92a15ce864a99b0db8b397e12cda3s.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/He035876e97754a589bfeffe38188b174j.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H60ce816b9060461399b900bedcd51718Z.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Protective phone case with anti-slip grip texture.",
+      fullDescription:
+        "UrbanGrip Phone Case offers shock-absorbing protection, raised edges for screen safety, and textured surface for secure grip. Compatible with wireless charging.",
+      rating: 4.6,
+      isNew: true,
+      price: 12,
+      onSale: true,
+      salePrice: 10
+    },
+    {
+      id: "acc-024",
+      name: "ClassicTime Watch Strap",
+      category: "accessories",
+      image: "https://s.alicdn.com/@sc04/kf/H477c17f903604985b91c78c32c7b9edcR.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/H5989c4c8135448c68e30977fedb00b21E.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Haf2c823b84344452a2454b1be2a543a4I.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hd1db07b56e474027982f204e7f6fcf43X.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H3b73a87de4f24f779bf1c29e20279d54C.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hccfa099c046c4750b3fc9514b44875f6m.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Leather watch strap with quick-release pins.",
+      fullDescription:
+        "ClassicTime Watch Strap features genuine leather material, adjustable sizing, and quick-release spring bars for easy installation. Available in multiple colors to match your style.",
+      rating: 4.5,
+      isNew: false,
+      price: 16,
+      onSale: true,
+      salePrice: 13
+    },
+    {
+      id: "acc-025",
+      name: "SunShield Polarized Sunglasses",
+      category: "accessories",
+      image: "https://s.alicdn.com/@sc04/kf/H636c7653b09141ff90a8807c55b5d66d4.png?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/Hb6aaa872b46544b680032df0dd4ed8c3N.png?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/H40e0abf649bb4bb3924ef95efd994315E.png?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H1655d856a1b143f389ad311071744046a.png?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H1bc221e0d5b44af9a7c3b3354cf14399S.png?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H30e2c2971e0448a2871f516a4e57f6225.png?avif=close&webp=close"
+      ],
+      shortDescription: "UV protection sunglasses with polarized lenses.",
+      fullDescription:
+        "SunShield Polarized Sunglasses offer 100% UV400 protection, anti-glare polarized lenses, and lightweight frame design. Perfect for driving, outdoor activities, or daily sun protection.",
+      rating: 4.8,
+      isNew: true,
+      price: 22,
+      onSale: false
+    },
+    {
+      id: "acc-026",
+      name: "TechPouch Cable Organizer",
+      category: "accessories",
+      image: "https://s.alicdn.com/@sc04/kf/H02ce5933cef9495eba9a53978062b3bab.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/Ha5b284bee94f4a2c8732253097210ae1x.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/H36472b45d55e47ad8faafa2af1ed6506V.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H64b5d793e3f34efabc4271235ef74e6eG.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H1607bb21e1be418dbb7de88e46af4006N.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hda5bc4975447422c887c9f54a52552bdY.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Compact organizer pouch for cables and tech accessories.",
+      fullDescription:
+        "TechPouch Cable Organizer features multiple compartments, elastic loops for cable management, and durable zipper closure. Keeps your charging cables, adapters, and small tech items organized.",
+      rating: 4.7,
+      isNew: true,
+      price: 14,
+      onSale: true,
+      salePrice: 11
+    },
+    {
+      id: "acc-027",
+      name: "EleganceScarf Silk Scarf",
+      category: "accessories",
+      image: "https://s.alicdn.com/@sc04/kf/H3c65ae7148134c9390ebbf64cce74566n.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/Hc6df9111d55e48c8bc9b4b181b877072m.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Hc3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hd4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/He5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hf6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Luxurious silk scarf with elegant pattern design.",
+      fullDescription:
+        "EleganceScarf Silk Scarf features premium silk material, beautiful printed patterns, and versatile styling options. Perfect for adding sophistication to any outfit or as a hair accessory.",
+      rating: 4.6,
+      isNew: false,
+      price: 28,
+      onSale: true,
+      salePrice: 24
+    },
+    {
+      id: "acc-028",
+      name: "PowerBank Portable Charger",
+      category: "accessories",
+      image: "https://s.alicdn.com/@sc04/kf/Ha7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/Hb8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/H2b6d37b16e864577b69eb58dc6f362764.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H2b6d37b16e864577b69eb58dc6f362764.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H59b27846b206411195116cf9634c2208K.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hb55dbd8ad40042e5975e4eda9e75842dF.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "High-capacity portable power bank with fast charging.",
+      fullDescription:
+        "PowerBank Portable Charger features 10000mAh capacity, dual USB ports, fast charging technology, and compact design. Includes LED battery indicator and safety protection features.",
+      rating: 4.8,
+      isNew: true,
+      price: 19,
+      onSale: false
+    },
+    {
+      id: "acc-029",
+      name: "LeatherBelt Classic Belt",
+      category: "accessories",
+      image: "https://s.alicdn.com/@sc04/kf/Ab56d0653fdfe463d8b20da1143c2cef9A.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/Aace8dd27a490408ba691876fa0ee2bf3r.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Abc2e5bd81f6245ab991e9995e5a9f5229.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/A1a0e911465a741bd9e4d40b8b5c304eeY.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Af3231b86a57d40cab39cc03e0c14e6daI.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/A63464b8885f8485295fe4c6229c5b6ffd.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Genuine leather belt with classic buckle design.",
+      fullDescription:
+        "LeatherBelt Classic Belt features premium genuine leather, adjustable sizing with multiple holes, and polished metal buckle. Timeless design suitable for both casual and formal wear.",
+      rating: 4.7,
+      isNew: false,
+      price: 26,
+      onSale: true,
+      salePrice: 22
+    },
+    {
+      id: "acc-030",
+      name: "CosmeticBag Travel Organizer",
+      category: "accessories",
+      image: "https://s.alicdn.com/@sc04/kf/H1626c2e427aa49ca96a025f963676fb2V.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/He5249c05aec94a97bc6995ba3f3590b3l.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Hfd52f00e46714c678d12c8fe3da74ab5R.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H1f7db80d07c44b038dbf879bef4a9060T.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H0e64432747ab4925aa75b3effd1e8777o.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H04f147dda9db4f4d94d769ef38b16370u.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Water-resistant cosmetic bag with multiple compartments.",
+      fullDescription:
+        "CosmeticBag Travel Organizer features water-resistant fabric, multiple interior pockets, and transparent sections for easy organization. Perfect for travel or daily makeup storage.",
+      rating: 4.6,
+      isNew: true,
+      price: 15,
+      onSale: false
+    },
+    {
+      id: "acc-031",
+      name: "KeyHolder Key Organizer",
+      category: "accessories",
+      image: "https://s.alicdn.com/@sc04/kf/He5252a1e9a514b24b2d4f8cc68382ab9F.jpg?avif=close&webp=close",
+      hoverImage: "https://s.alicdn.com/@sc04/kf/H7fca30d706874e608cf1148888dfaad6u.jpg?avif=close&webp=close",
+      imageGallery: [
+        "https://s.alicdn.com/@sc04/kf/Hc457261a2125483197f9685b86402902G.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hcbfb795defc04c25ad7d5f516ed280ca3.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/Hb994064655a84df3bbf6b0010b31b57dk.jpg?avif=close&webp=close",
+        "https://s.alicdn.com/@sc04/kf/H605a63f8ce214e86b8af927a536b9223L.jpg?avif=close&webp=close"
+      ],
+      shortDescription: "Compact key organizer with carabiner clip.",
+      fullDescription:
+        "KeyHolder Key Organizer features aluminum construction, individual key slots, and secure carabiner attachment. Keeps keys organized and prevents jingling while maintaining easy access.",
+      rating: 4.5,
+      isNew: false,
+      price: 11,
+      onSale: true,
+      salePrice: 9
     },
     
     
