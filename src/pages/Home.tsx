@@ -186,7 +186,7 @@ const Home = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (latestArrivalsRef.current) {
@@ -210,7 +210,7 @@ const Home = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (statsRef.current) {
@@ -234,7 +234,7 @@ const Home = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (newsletterRef.current) {
@@ -258,7 +258,7 @@ const Home = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (kycRef.current) {
@@ -296,21 +296,21 @@ const Home = () => {
       ? highlightedNewProducts.slice(0, 8)
       : products.slice(0, 8);
   const styleCollections = featuredCategoryCards.filter(({ key }) =>
-    ["men", "women", "accessories"].includes(key)
+    ["men", "women", "accessories"].includes(key),
   );
   const technologyCollections = featuredCategoryCards.filter(({ key }) =>
-    ["tech-gear", "workspace", "creator-studio", "smart-tools"].includes(key)
+    ["tech-gear", "workspace", "creator-studio", "smart-tools"].includes(key),
   );
   const [techHero, ...techGrid] = technologyCollections;
   const styleCollectionsTotal = styleCollections.reduce(
     (total, category) =>
       total + (productsByCategory[category.key]?.length ?? 0),
-    0
+    0,
   );
   const technologyCollectionsTotal = technologyCollections.reduce(
     (total, category) =>
       total + (productsByCategory[category.key]?.length ?? 0),
-    0
+    0,
   );
 
   return (
@@ -626,7 +626,7 @@ const Home = () => {
       >
         {/* Animated holographic gradient background */}
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 via-blue-600/10 via-purple-600/10 to-pink-600/10 animate-gradient-xy-hero" />
-        
+
         {/* Animated background pattern */}
         <div className="absolute inset-0 opacity-15">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(56,189,248,0.3)_25%,rgba(168,85,247,0.3)_50%,rgba(236,72,153,0.3)_75%,transparent_100%)] animate-wave-hero" />
@@ -718,7 +718,8 @@ const Home = () => {
                 const colorClasses = {
                   cyan: "border-cyan-400/50 text-cyan-400 hover:border-cyan-400 hover:bg-cyan-500/10",
                   blue: "border-blue-400/50 text-blue-400 hover:border-blue-400 hover:bg-blue-500/10",
-                  purple: "border-purple-400/50 text-purple-400 hover:border-purple-400 hover:bg-purple-500/10",
+                  purple:
+                    "border-purple-400/50 text-purple-400 hover:border-purple-400 hover:bg-purple-500/10",
                   pink: "border-pink-400/50 text-pink-400 hover:border-pink-400 hover:bg-pink-500/10",
                 };
                 const glowColors = {
@@ -738,15 +739,17 @@ const Home = () => {
                     style={{ transitionDelay: badge.delay }}
                   >
                     {/* Glow effect */}
-                    <div className={`absolute -inset-1 bg-gradient-to-r ${glowColors[badge.color as keyof typeof glowColors]} rounded-full blur-lg opacity-0 group-hover/badge:opacity-100 transition-opacity duration-300`} />
+                    <div
+                      className={`absolute -inset-1 bg-gradient-to-r ${glowColors[badge.color as keyof typeof glowColors]} rounded-full blur-lg opacity-0 group-hover/badge:opacity-100 transition-opacity duration-300`}
+                    />
 
                     {/* Badge */}
-                    <div className={`relative flex flex-col items-center gap-1 px-4 py-2.5 bg-slate-900/80 backdrop-blur-xl rounded-xl border ${colorClasses[badge.color as keyof typeof colorClasses]} shadow-[0_0_20px_rgba(56,189,248,0.3)] group-hover/badge:scale-110 transition-all duration-300 min-w-[100px]`}>
+                    <div
+                      className={`relative flex flex-col items-center gap-1 px-4 py-2.5 bg-slate-900/80 backdrop-blur-xl rounded-xl border ${colorClasses[badge.color as keyof typeof colorClasses]} shadow-[0_0_20px_rgba(56,189,248,0.3)] group-hover/badge:scale-110 transition-all duration-300 min-w-[100px]`}
+                    >
                       <div className="flex items-center gap-2">
                         <Icon className="h-4 w-4 animate-icon-bounce group-hover/badge:drop-shadow-[0_0_10px_currentColor]" />
-                        <span className="text-xs font-bold">
-                          {badge.label}
-                        </span>
+                        <span className="text-xs font-bold">{badge.label}</span>
                       </div>
                       <span className="text-[10px] text-slate-400 group-hover/badge:text-slate-300 transition-colors">
                         {badge.description}
@@ -772,8 +775,10 @@ const Home = () => {
               >
                 {/* Outer glow */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 rounded-full blur-lg opacity-0 group-hover/link:opacity-60 transition-opacity duration-500" />
-                
-                <span className="relative z-10 whitespace-nowrap">View Company Details</span>
+
+                <span className="relative z-10 whitespace-nowrap">
+                  View Company Details
+                </span>
                 <ArrowRight className="h-4 w-4 relative z-10 transition-transform group-hover/link:translate-x-2 group-hover/link:scale-125 flex-shrink-0" />
                 <div className="absolute inset-0 bg-cyan-500/20 rounded-full blur-xl opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
               </Link>
@@ -2344,7 +2349,7 @@ const Home = () => {
               <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-slate-900/80 backdrop-blur-xl border border-cyan-400/30 shadow-[0_0_30px_rgba(56,189,248,0.3)] text-xs font-bold uppercase tracking-[0.3em]">
                 {/* Glow effect */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 rounded-full blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-                
+
                 <ShieldCheck className="h-4 w-4 text-cyan-400 relative z-10 animate-pulse-subtle" />
                 <span className="relative z-10 bg-gradient-to-r from-cyan-300 via-white to-purple-300 bg-clip-text text-transparent">
                   Company Verification
@@ -2359,8 +2364,9 @@ const Home = () => {
                   </span>
                 </h2>
                 <p className="text-base lg:text-lg text-slate-300 max-w-2xl leading-relaxed">
-                  Access company credentials, compliance documentation, and verification 
-                  materials for business partners, procurement teams, and global trade relationships.
+                  Access company credentials, compliance documentation, and
+                  verification materials for business partners, procurement
+                  teams, and global trade relationships.
                 </p>
               </div>
 
@@ -2396,7 +2402,7 @@ const Home = () => {
                     >
                       {/* Item glow */}
                       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-purple-500/0 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                      
+
                       <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/20 border border-cyan-400/30 text-cyan-400 group-hover/item:bg-cyan-500/30 group-hover/item:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(56,189,248,0.3)]">
                         <Icon className="h-6 w-6 group-hover/item:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)]" />
                       </div>
@@ -2404,7 +2410,9 @@ const Home = () => {
                         <p className="font-bold text-white group-hover/item:text-cyan-200 transition-colors duration-300">
                           {item.title}
                         </p>
-                        <p className="text-sm text-slate-300 mt-1">{item.desc}</p>
+                        <p className="text-sm text-slate-300 mt-1">
+                          {item.desc}
+                        </p>
                       </div>
                     </div>
                   );
@@ -2415,7 +2423,7 @@ const Home = () => {
                 <div className="group/info flex items-center gap-3 rounded-2xl border border-cyan-400/30 bg-slate-900/80 backdrop-blur-xl px-5 py-3 transition-all duration-300 hover:border-cyan-400/60 hover:shadow-[0_0_20px_rgba(56,189,248,0.3)]">
                   {/* Glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-transparent opacity-0 group-hover/info:opacity-100 transition-opacity duration-300 rounded-2xl" />
-                  
+
                   <Fingerprint className="h-6 w-6 text-cyan-400 relative z-10 group-hover/info:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)] flex-shrink-0" />
                   <div className="relative z-10 min-w-0">
                     <p className="text-sm text-slate-400 leading-tight">
@@ -2427,19 +2435,21 @@ const Home = () => {
                 <div className="group/info flex items-center gap-3 rounded-2xl border border-emerald-400/30 bg-slate-900/80 backdrop-blur-xl px-5 py-3 transition-all duration-300 hover:border-emerald-400/60 hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]">
                   {/* Glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-emerald-500/10 to-transparent opacity-0 group-hover/info:opacity-100 transition-opacity duration-300 rounded-2xl" />
-                  
+
                   <FileText className="h-6 w-6 text-emerald-400 relative z-10 group-hover/info:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)] flex-shrink-0" />
                   <div className="relative z-10 min-w-0">
                     <p className="text-sm text-slate-400 leading-tight">
                       Registration No.
                     </p>
-                    <p className="text-xs sm:text-sm font-bold text-white break-all">79695478-000-01-26-4</p>
+                    <p className="text-xs sm:text-sm font-bold text-white break-all">
+                      79695478
+                    </p>
                   </div>
                 </div>
                 <div className="group/info flex items-center gap-3 rounded-2xl border border-purple-400/30 bg-slate-900/80 backdrop-blur-xl px-5 py-3 transition-all duration-300 hover:border-purple-400/60 hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]">
                   {/* Glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/10 to-transparent opacity-0 group-hover/info:opacity-100 transition-opacity duration-300 rounded-2xl" />
-                  
+
                   <Globe2 className="h-6 w-6 text-purple-400 relative z-10 group-hover/info:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)] flex-shrink-0" />
                   <div className="relative z-10 min-w-0">
                     <p className="text-sm text-slate-400 leading-tight">
@@ -2451,13 +2461,13 @@ const Home = () => {
                 <div className="group/info flex items-center gap-3 rounded-2xl border border-blue-400/30 bg-slate-900/80 backdrop-blur-xl px-5 py-3 transition-all duration-300 hover:border-blue-400/60 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]">
                   {/* Glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-transparent opacity-0 group-hover/info:opacity-100 transition-opacity duration-300 rounded-2xl" />
-                  
+
                   <Phone className="h-6 w-6 text-blue-400 relative z-10 group-hover/info:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)] flex-shrink-0" />
                   <div className="relative z-10 min-w-0">
                     <p className="text-sm text-slate-400 leading-tight">
                       Contact Phone
                     </p>
-                    <a 
+                    <a
                       href="tel:+85247485904"
                       className="text-base font-bold text-white hover:text-blue-300 transition-colors duration-300 inline-flex items-center gap-1 group/link"
                     >
@@ -2476,7 +2486,7 @@ const Home = () => {
                   >
                     {/* Outer glow */}
                     <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 rounded-lg blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-                    
+
                     <span className="relative z-10 flex items-center gap-2">
                       View Company Details
                       <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-125" />
@@ -2490,7 +2500,7 @@ const Home = () => {
                 >
                   {/* Glow effect */}
                   <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 rounded-2xl blur-lg opacity-0 group-hover/link:opacity-40 transition-opacity duration-500" />
-                  
+
                   <span className="relative z-10">Request Information</span>
                   <ArrowRight className="h-4 w-4 relative z-10 transition-transform group-hover/link:translate-x-2 group-hover/link:scale-125" />
                 </Link>
@@ -2502,10 +2512,10 @@ const Home = () => {
               <div className="group/vault relative overflow-hidden rounded-3xl border border-cyan-400/30 bg-slate-900/90 backdrop-blur-2xl p-6 shadow-[0_25px_80px_rgba(56,189,248,0.3)]">
                 {/* Outer glow */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 rounded-3xl blur-xl opacity-0 group-hover/vault:opacity-100 transition-opacity duration-700" />
-                
+
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/10 opacity-0 group-hover/vault:opacity-100 transition-opacity duration-500" />
-                
+
                 <div className="mb-6 flex items-center justify-between relative z-10">
                   <div>
                     <p className="text-sm text-slate-400">Company Documents</p>
@@ -2523,7 +2533,7 @@ const Home = () => {
                   {[
                     {
                       label: "Business Registration Certificate",
-                      code: "79695478-000-01-26-4",
+                      code: "79695478",
                       status: "Verified",
                       accent: "emerald",
                       icon: FileText,
@@ -2552,15 +2562,18 @@ const Home = () => {
                   ].map((doc, index) => {
                     const accentClasses = {
                       cyan: "bg-cyan-500/15 text-cyan-300 border-cyan-400/30",
-                      purple: "bg-purple-500/15 text-purple-300 border-purple-400/30",
+                      purple:
+                        "bg-purple-500/15 text-purple-300 border-purple-400/30",
                       blue: "bg-blue-500/15 text-blue-300 border-blue-400/30",
-                      emerald: "bg-emerald-500/15 text-emerald-300 border-emerald-400/30",
+                      emerald:
+                        "bg-emerald-500/15 text-emerald-300 border-emerald-400/30",
                     };
                     const borderClasses = {
                       cyan: "border-cyan-400/30 hover:border-cyan-400/60",
                       purple: "border-purple-400/30 hover:border-purple-400/60",
                       blue: "border-blue-400/30 hover:border-blue-400/60",
-                      emerald: "border-emerald-400/30 hover:border-emerald-400/60",
+                      emerald:
+                        "border-emerald-400/30 hover:border-emerald-400/60",
                     };
                     const shadowClasses = {
                       cyan: "hover:shadow-[0_0_30px_rgba(56,189,248,0.4)]",
@@ -2570,9 +2583,11 @@ const Home = () => {
                     };
                     const glowClasses = {
                       cyan: "from-cyan-500/0 via-cyan-500/15 to-purple-500/0",
-                      purple: "from-purple-500/0 via-purple-500/15 to-pink-500/0",
+                      purple:
+                        "from-purple-500/0 via-purple-500/15 to-pink-500/0",
                       blue: "from-blue-500/0 via-blue-500/15 to-cyan-500/0",
-                      emerald: "from-emerald-500/0 via-emerald-500/15 to-teal-500/0",
+                      emerald:
+                        "from-emerald-500/0 via-emerald-500/15 to-teal-500/0",
                     };
                     const Icon = doc.icon;
                     return (
@@ -2582,24 +2597,32 @@ const Home = () => {
                         style={{ transitionDelay: `${index * 120}ms` }}
                       >
                         {/* Item glow */}
-                        <div className={`absolute inset-0 bg-gradient-to-r ${glowClasses[doc.accent as keyof typeof glowClasses]} opacity-0 group-hover/doc:opacity-100 transition-opacity duration-500`} />
-                        
+                        <div
+                          className={`absolute inset-0 bg-gradient-to-r ${glowClasses[doc.accent as keyof typeof glowClasses]} opacity-0 group-hover/doc:opacity-100 transition-opacity duration-500`}
+                        />
+
                         <div className="relative flex items-center gap-4 z-10">
                           <div className="flex-shrink-0">
-                            <div className={`flex h-10 w-10 items-center justify-center rounded-xl border ${accentClasses[doc.accent as keyof typeof accentClasses]} ${doc.accent === 'emerald' ? 'shadow-[0_0_15px_rgba(16,185,129,0.3)]' : doc.accent === 'cyan' ? 'shadow-[0_0_15px_rgba(56,189,248,0.3)]' : doc.accent === 'purple' ? 'shadow-[0_0_15px_rgba(168,85,247,0.3)]' : 'shadow-[0_0_15px_rgba(59,130,246,0.3)]'} group-hover/doc:scale-110 transition-transform duration-300`}>
-                              <Icon className={`h-5 w-5 ${doc.accent === 'emerald' ? 'text-emerald-300 group-hover/doc:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]' : doc.accent === 'cyan' ? 'text-cyan-300 group-hover/doc:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)]' : doc.accent === 'purple' ? 'text-purple-300 group-hover/doc:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]' : 'text-blue-300 group-hover/doc:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]'}`} />
+                            <div
+                              className={`flex h-10 w-10 items-center justify-center rounded-xl border ${accentClasses[doc.accent as keyof typeof accentClasses]} ${doc.accent === "emerald" ? "shadow-[0_0_15px_rgba(16,185,129,0.3)]" : doc.accent === "cyan" ? "shadow-[0_0_15px_rgba(56,189,248,0.3)]" : doc.accent === "purple" ? "shadow-[0_0_15px_rgba(168,85,247,0.3)]" : "shadow-[0_0_15px_rgba(59,130,246,0.3)]"} group-hover/doc:scale-110 transition-transform duration-300`}
+                            >
+                              <Icon
+                                className={`h-5 w-5 ${doc.accent === "emerald" ? "text-emerald-300 group-hover/doc:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]" : doc.accent === "cyan" ? "text-cyan-300 group-hover/doc:drop-shadow-[0_0_10px_rgba(56,189,248,0.8)]" : doc.accent === "purple" ? "text-purple-300 group-hover/doc:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]" : "text-blue-300 group-hover/doc:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]"}`}
+                              />
                             </div>
                           </div>
                           <div className="flex-1 min-w-0">
                             <p className="text-sm text-slate-300 group-hover/doc:text-white transition-colors">
                               {doc.label}
                             </p>
-                            <p className={`text-lg font-bold text-white ${doc.accent === 'emerald' ? 'group-hover/doc:text-emerald-200 drop-shadow-[0_0_10px_rgba(16,185,129,0.3)]' : doc.accent === 'cyan' ? 'group-hover/doc:text-cyan-200 drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]' : doc.accent === 'purple' ? 'group-hover/doc:text-purple-200 drop-shadow-[0_0_10px_rgba(168,85,247,0.3)]' : 'group-hover/doc:text-blue-200 drop-shadow-[0_0_10px_rgba(59,130,246,0.3)]'} transition-colors break-all`}>
+                            <p
+                              className={`text-lg font-bold text-white ${doc.accent === "emerald" ? "group-hover/doc:text-emerald-200 drop-shadow-[0_0_10px_rgba(16,185,129,0.3)]" : doc.accent === "cyan" ? "group-hover/doc:text-cyan-200 drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]" : doc.accent === "purple" ? "group-hover/doc:text-purple-200 drop-shadow-[0_0_10px_rgba(168,85,247,0.3)]" : "group-hover/doc:text-blue-200 drop-shadow-[0_0_10px_rgba(59,130,246,0.3)]"} transition-colors break-all`}
+                            >
                               {doc.code}
                             </p>
                           </div>
                           <span
-                            className={`flex-shrink-0 rounded-full px-3 py-1 text-xs font-bold border ${accentClasses[doc.accent as keyof typeof accentClasses]} ${doc.accent === 'emerald' ? 'shadow-[0_0_10px_rgba(16,185,129,0.3)]' : doc.accent === 'cyan' ? 'shadow-[0_0_10px_rgba(56,189,248,0.3)]' : doc.accent === 'purple' ? 'shadow-[0_0_10px_rgba(168,85,247,0.3)]' : 'shadow-[0_0_10px_rgba(59,130,246,0.3)]'}`}
+                            className={`flex-shrink-0 rounded-full px-3 py-1 text-xs font-bold border ${accentClasses[doc.accent as keyof typeof accentClasses]} ${doc.accent === "emerald" ? "shadow-[0_0_10px_rgba(16,185,129,0.3)]" : doc.accent === "cyan" ? "shadow-[0_0_10px_rgba(56,189,248,0.3)]" : doc.accent === "purple" ? "shadow-[0_0_10px_rgba(168,85,247,0.3)]" : "shadow-[0_0_10px_rgba(59,130,246,0.3)]"}`}
                           >
                             {doc.status}
                           </span>
@@ -2613,13 +2636,13 @@ const Home = () => {
               <div className="group/registry relative overflow-hidden rounded-3xl border border-purple-400/30 bg-slate-900/90 backdrop-blur-2xl p-6 shadow-[0_25px_80px_rgba(168,85,247,0.3)]">
                 {/* Outer glow */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-rose-500/20 rounded-3xl blur-xl opacity-0 group-hover/registry:opacity-100 transition-opacity duration-700" />
-                
+
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-pink-500/10 opacity-0 group-hover/registry:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Glowing orb */}
                 <div className="absolute -top-8 -right-8 h-24 w-24 rounded-full bg-purple-500/20 blur-3xl animate-pulse-slow" />
-                
+
                 <div className="relative space-y-5 z-10">
                   <div className="flex items-center gap-3">
                     <div className="relative">
@@ -2635,7 +2658,7 @@ const Home = () => {
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-3 pt-2 border-t border-purple-400/20">
                     <div className="group/info flex items-start gap-3">
                       <div className="relative flex-shrink-0 mt-0.5">
@@ -2647,11 +2670,12 @@ const Home = () => {
                           Registered Business Address
                         </p>
                         <p className="text-sm font-semibold text-white leading-relaxed group-hover/info:text-emerald-200 transition-colors">
-                          Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong Kong
+                          Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong,
+                          Hong Kong
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="group/info flex items-center gap-3">
                       <div className="relative flex-shrink-0">
                         <div className="absolute inset-0 bg-cyan-400/20 rounded-lg blur-md opacity-0 group-hover/info:opacity-100 transition-opacity duration-300" />
@@ -2661,7 +2685,7 @@ const Home = () => {
                         <p className="text-xs text-slate-400 mb-1 group-hover/info:text-slate-300 transition-colors">
                           Contact Phone
                         </p>
-                        <a 
+                        <a
                           href="tel:+85247485904"
                           className="text-sm font-semibold text-white hover:text-cyan-300 transition-colors duration-300 inline-flex items-center gap-2 group/link"
                         >
@@ -2671,10 +2695,11 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   <p className="text-sm text-slate-300 leading-relaxed pt-2">
-                    Maxtech Import and Export Limited is a registered Hong Kong company. 
-                    Company documents and verification materials are available upon request.
+                    Maxtech Import and Export Limited is a registered Hong Kong
+                    company. Company documents and verification materials are
+                    available upon request.
                   </p>
                   <Link
                     to="/compliance"
@@ -2682,8 +2707,10 @@ const Home = () => {
                   >
                     {/* Glow effect */}
                     <div className="absolute inset-0 bg-purple-500/10 rounded-lg blur-lg opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
-                    
-                    <span className="relative z-10">View Company Information</span>
+
+                    <span className="relative z-10">
+                      View Company Information
+                    </span>
                     <ArrowRight className="h-4 w-4 relative z-10 transition-transform group-hover/link:translate-x-2 group-hover/link:scale-125" />
                   </Link>
                 </div>

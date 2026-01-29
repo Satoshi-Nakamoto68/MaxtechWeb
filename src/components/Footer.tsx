@@ -216,9 +216,7 @@ const Footer = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-emerald-500/20 to-emerald-500/0 opacity-0 group-hover/badge:opacity-100 transition-opacity duration-300 rounded-2xl" />
 
                   <FileText className="h-4 w-4 relative z-10 group-hover/badge:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
-                  <span className="relative z-10 text-xs">
-                    Reg: 79695478-000-01-26-4
-                  </span>
+                  <span className="relative z-10 text-xs">Reg: 79695478</span>
                 </div>
                 <div className="group/badge inline-flex items-center gap-2 rounded-2xl border border-cyan-400/30 bg-slate-900/80 backdrop-blur-xl px-4 py-2 text-sm font-bold text-cyan-300 shadow-[0_0_15px_rgba(56,189,248,0.3)] hover:border-cyan-400/60 hover:shadow-[0_0_25px_rgba(56,189,248,0.5)] transition-all duration-300">
                   {/* Glow effect */}
@@ -498,7 +496,7 @@ const Footer = () => {
                         Business Registration Certificate Number
                       </p>
                       <p className="text-sm font-semibold text-white group-hover/info:text-emerald-200 transition-colors break-all">
-                        79695478-000-01-26-4
+                        79695478
                       </p>
                     </div>
                   </div>

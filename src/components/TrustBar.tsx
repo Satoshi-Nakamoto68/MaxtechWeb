@@ -1,4 +1,13 @@
-import { ShieldCheck, Award, MapPin, CheckCircle2, Sparkles, Zap, Globe2, FileText } from "lucide-react";
+import {
+  ShieldCheck,
+  Award,
+  MapPin,
+  CheckCircle2,
+  Sparkles,
+  Zap,
+  Globe2,
+  FileText,
+} from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const TrustBar = () => {
@@ -21,7 +30,7 @@ const TrustBar = () => {
     {
       icon: FileText,
       label: "Business Registration",
-      value: "79695478-000-01-26-4",
+      value: "79695478",
       gradient: "from-indigo-500/20 via-blue-500/20 to-cyan-500/20",
     },
     {
@@ -96,11 +105,11 @@ const TrustBar = () => {
     const updateMarquee = () => {
       const firstChild = marquee.firstElementChild as HTMLElement;
       if (!firstChild) return;
-      
+
       const totalWidth = Array.from(marquee.children).reduce((sum, child) => {
         return sum + (child as HTMLElement).offsetWidth + 32; // 32px for gap-8
       }, 0);
-      
+
       // Set animation duration based on content width for consistent speed
       const duration = Math.max(30, totalWidth / 30); // 30px per second
       marquee.style.animation = `marquee-scroll ${duration}s linear infinite`;
@@ -112,11 +121,11 @@ const TrustBar = () => {
     }, 1000);
 
     // Update on window resize
-    window.addEventListener('resize', updateMarquee);
+    window.addEventListener("resize", updateMarquee);
 
     return () => {
       clearTimeout(startDelay);
-      window.removeEventListener('resize', updateMarquee);
+      window.removeEventListener("resize", updateMarquee);
     };
   }, []);
 
@@ -165,7 +174,7 @@ const TrustBar = () => {
     >
       {/* Animated holographic gradient background */}
       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 via-purple-500/5 to-pink-500/5 animate-gradient-xy" />
-      
+
       {/* Subtle mesh gradient overlay */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(56,189,248,0.15),transparent_40%)]" />
@@ -179,7 +188,10 @@ const TrustBar = () => {
       </div>
 
       {/* Dynamic particles container */}
-      <div ref={particlesRef} className="absolute inset-0 overflow-hidden pointer-events-none" />
+      <div
+        ref={particlesRef}
+        className="absolute inset-0 overflow-hidden pointer-events-none"
+      />
 
       {/* Glowing orbs with 3D effect - subtle for light background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -214,23 +226,23 @@ const TrustBar = () => {
             <div className="relative group/verified">
               {/* Glowing background */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 rounded-full opacity-0 group-hover/verified:opacity-60 blur-sm transition-opacity duration-500 animate-pulse-slow" />
-              
+
               {/* Glassmorphism card with better contrast */}
               <div className="relative flex items-center gap-2.5 px-4 py-2 bg-white/80 backdrop-blur-xl rounded-full border border-slate-200/60 group-hover/verified:border-cyan-400/80 transition-all duration-500 hover:scale-110 hover:bg-white hover:shadow-[0_8px_30px_rgba(56,189,248,0.3)]">
                 {/* Inner glow */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/0 via-cyan-500/30 to-cyan-500/0 opacity-0 group-hover/verified:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Animated sparkle effect */}
                 <Sparkles className="relative h-4 w-4 text-cyan-600 animate-sparkle group-hover/verified:animate-spin-slow" />
-                
+
                 <CheckCircle2 className="relative h-4 w-4 text-emerald-600 animate-pulse-subtle group-hover/verified:scale-125 transition-transform duration-300" />
-                
+
                 <span className="relative text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 bg-clip-text text-transparent animate-gradient-text">
                   VERIFIED
                 </span>
               </div>
             </div>
-            
+
             {/* Animated separator with glow */}
             <div className="relative h-8 w-px">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-400/60 to-transparent animate-pulse-vertical" />
@@ -239,25 +251,22 @@ const TrustBar = () => {
 
           {/* Center - Smooth infinite marquee */}
           <div className="flex-1 min-w-0 overflow-hidden">
-            <div
-              ref={scrollContainerRef}
-              className="relative w-full"
-            >
+            <div ref={scrollContainerRef} className="relative w-full">
               {/* Gradient fade edges for smooth effect */}
               <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#f8fafc] via-[#f8fafc]/80 to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#f8fafc] via-[#f8fafc]/80 to-transparent z-10 pointer-events-none" />
-              
+
               <div
                 ref={marqueeRef}
                 className="flex items-center gap-8 will-change-transform"
-                style={{ 
-                  width: 'fit-content',
+                style={{
+                  width: "fit-content",
                 }}
               >
                 {/* First set of items */}
                 {trustItems.map((item, index) => {
                   const Icon = item.icon;
-                  
+
                   return (
                     <div
                       key={`first-${index}`}
@@ -266,30 +275,34 @@ const TrustBar = () => {
                       {/* 3D Card with glassmorphism */}
                       <div className="relative group/card">
                         {/* Holographic border glow */}
-                        <div className={`absolute -inset-0.5 bg-gradient-to-r ${item.gradient} rounded-xl opacity-0 group-hover/card:opacity-60 blur transition-all duration-500`} />
-                        
+                        <div
+                          className={`absolute -inset-0.5 bg-gradient-to-r ${item.gradient} rounded-xl opacity-0 group-hover/card:opacity-60 blur transition-all duration-500`}
+                        />
+
                         {/* Glass card with better contrast */}
                         <div className="relative flex items-center gap-2.5 px-3.5 py-2 bg-white/90 backdrop-blur-xl rounded-xl border border-slate-200/60 group-hover/card:border-cyan-400/80 transition-all duration-500 group-hover/card:scale-110 group-hover/card:rotate-1 group-hover/card:shadow-[0_8px_32px_rgba(56,189,248,0.25)]">
                           {/* Animated gradient overlay */}
-                          <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} rounded-xl opacity-0 group-hover/card:opacity-30 transition-opacity duration-500`} />
-                          
+                          <div
+                            className={`absolute inset-0 bg-gradient-to-br ${item.gradient} rounded-xl opacity-0 group-hover/card:opacity-30 transition-opacity duration-500`}
+                          />
+
                           {/* Icon with 3D rotation */}
                           <div className="relative z-10">
                             <Icon className="h-4 w-4 text-cyan-600 flex-shrink-0 transition-all duration-500 group-hover/card:scale-150 group-hover/card:rotate-12 group-hover/card:text-cyan-700 animate-icon-float-3d" />
                           </div>
-                          
+
                           {/* Label with gradient text */}
                           <span className="relative z-10 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-700 hidden sm:inline group-hover/card:text-slate-900 transition-all duration-300">
                             {item.label}:
                           </span>
                         </div>
                       </div>
-                      
+
                       {/* Value text with better contrast */}
                       <span className="text-xs sm:text-sm font-semibold whitespace-nowrap text-slate-800 transition-all duration-300 group-hover:text-cyan-700 group-hover:drop-shadow-[0_2px_4px_rgba(56,189,248,0.2)]">
                         {item.value}
                       </span>
-                      
+
                       {/* Animated separator with particle effect */}
                       <div className="relative h-6 w-px flex-shrink-0">
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-400/50 to-transparent animate-pulse-vertical-glow" />
@@ -298,11 +311,11 @@ const TrustBar = () => {
                     </div>
                   );
                 })}
-                
+
                 {/* Duplicate set for seamless loop */}
                 {trustItems.map((item, index) => {
                   const Icon = item.icon;
-                  
+
                   return (
                     <div
                       key={`second-${index}`}
@@ -311,30 +324,34 @@ const TrustBar = () => {
                       {/* 3D Card with glassmorphism */}
                       <div className="relative group/card">
                         {/* Holographic border glow */}
-                        <div className={`absolute -inset-0.5 bg-gradient-to-r ${item.gradient} rounded-xl opacity-0 group-hover/card:opacity-60 blur transition-all duration-500`} />
-                        
+                        <div
+                          className={`absolute -inset-0.5 bg-gradient-to-r ${item.gradient} rounded-xl opacity-0 group-hover/card:opacity-60 blur transition-all duration-500`}
+                        />
+
                         {/* Glass card with better contrast */}
                         <div className="relative flex items-center gap-2.5 px-3.5 py-2 bg-white/90 backdrop-blur-xl rounded-xl border border-slate-200/60 group-hover/card:border-cyan-400/80 transition-all duration-500 group-hover/card:scale-110 group-hover/card:rotate-1 group-hover/card:shadow-[0_8px_32px_rgba(56,189,248,0.25)]">
                           {/* Animated gradient overlay */}
-                          <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} rounded-xl opacity-0 group-hover/card:opacity-30 transition-opacity duration-500`} />
-                          
+                          <div
+                            className={`absolute inset-0 bg-gradient-to-br ${item.gradient} rounded-xl opacity-0 group-hover/card:opacity-30 transition-opacity duration-500`}
+                          />
+
                           {/* Icon with 3D rotation */}
                           <div className="relative z-10">
                             <Icon className="h-4 w-4 text-cyan-600 flex-shrink-0 transition-all duration-500 group-hover/card:scale-150 group-hover/card:rotate-12 group-hover/card:text-cyan-700 animate-icon-float-3d" />
                           </div>
-                          
+
                           {/* Label with gradient text */}
                           <span className="relative z-10 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-700 hidden sm:inline group-hover/card:text-slate-900 transition-all duration-300">
                             {item.label}:
                           </span>
                         </div>
                       </div>
-                      
+
                       {/* Value text with better contrast */}
                       <span className="text-xs sm:text-sm font-semibold whitespace-nowrap text-slate-800 transition-all duration-300 group-hover:text-cyan-700 group-hover:drop-shadow-[0_2px_4px_rgba(56,189,248,0.2)]">
                         {item.value}
                       </span>
-                      
+
                       {/* Animated separator with particle effect */}
                       <div className="relative h-6 w-px flex-shrink-0">
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-400/50 to-transparent animate-pulse-vertical-glow" />
@@ -360,25 +377,25 @@ const TrustBar = () => {
             <div className="relative h-8 w-px">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-400/50 to-transparent animate-pulse-vertical-glow" />
             </div>
-            
+
             {/* Premium badge with holographic effect */}
             <div className="relative group/trusted">
               {/* Outer glow ring */}
               <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 rounded-full opacity-0 group-hover/trusted:opacity-60 blur-md transition-opacity duration-500 animate-rotate-gradient" />
-              
+
               {/* Glass badge with better contrast */}
               <div className="relative flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-50 via-yellow-50 to-orange-50 backdrop-blur-xl rounded-full border border-amber-300/60 group-hover/trusted:border-amber-400/80 transition-all duration-500 hover:scale-115 hover:shadow-[0_8px_40px_rgba(251,191,36,0.4)]">
                 {/* Inner shine effect */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover/trusted:opacity-100 animate-shine" />
-                
+
                 {/* Icon with rotation */}
                 <Award className="relative h-4 w-4 text-amber-600 z-10 animate-bounce-subtle group-hover/trusted:animate-spin-slow group-hover/trusted:scale-125 transition-transform duration-300" />
-                
+
                 {/* Text with gradient */}
                 <span className="relative z-10 text-[10px] font-black uppercase tracking-widest bg-gradient-to-r from-amber-700 via-yellow-700 to-orange-700 bg-clip-text text-transparent animate-gradient-text-gold">
                   Trusted
                 </span>
-                
+
                 {/* Sparkle particles */}
                 <Zap className="absolute -top-1 -right-1 h-3 w-3 text-yellow-600 opacity-0 group-hover/trusted:opacity-100 animate-sparkle-fast transition-opacity duration-300" />
               </div>
@@ -403,7 +420,7 @@ const TrustBar = () => {
               Maxtech Import and Export Limited
             </span>
           </div>
-          
+
           {/* Trust indicators row */}
           <div className="flex items-center justify-center gap-2 text-[10px] flex-wrap">
             <div className="flex items-center gap-1.5 group relative">
@@ -411,13 +428,13 @@ const TrustBar = () => {
               <div className="relative flex items-center gap-1.5 px-2 py-1 bg-white/90 backdrop-blur-sm rounded-lg border border-slate-200/60 group-hover:border-indigo-400/80 transition-all duration-300">
                 <FileText className="h-3.5 w-3.5 text-indigo-600 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125" />
                 <span className="text-slate-800 transition-colors duration-300 group-hover:text-indigo-700 font-medium text-[9px] sm:text-[10px]">
-                  79695478-000-01-26-4
+                  79695478
                 </span>
               </div>
             </div>
-            
+
             <div className="h-4 w-px bg-gradient-to-b from-transparent via-cyan-400/50 to-transparent animate-pulse-vertical" />
-            
+
             <div className="flex items-center gap-1.5 group relative">
               <div className="absolute -inset-1 bg-blue-400/20 rounded-lg opacity-0 group-hover:opacity-100 blur transition-opacity duration-300" />
               <div className="relative flex items-center gap-1.5 px-2 py-1 bg-white/90 backdrop-blur-sm rounded-lg border border-slate-200/60 group-hover:border-blue-400/80 transition-all duration-300">
@@ -427,9 +444,9 @@ const TrustBar = () => {
                 </span>
               </div>
             </div>
-            
+
             <div className="h-4 w-px bg-gradient-to-b from-transparent via-cyan-400/50 to-transparent animate-pulse-vertical" />
-            
+
             <div className="flex items-center gap-1.5 group relative">
               <div className="absolute -inset-1 bg-emerald-400/20 rounded-lg opacity-0 group-hover:opacity-100 blur transition-opacity duration-300" />
               <div className="relative flex items-center gap-1.5 px-2 py-1 bg-white/90 backdrop-blur-sm rounded-lg border border-slate-200/60 group-hover:border-emerald-400/80 transition-all duration-300">
@@ -439,9 +456,9 @@ const TrustBar = () => {
                 </span>
               </div>
             </div>
-            
+
             <div className="h-4 w-px bg-gradient-to-b from-transparent via-cyan-400/50 to-transparent animate-pulse-vertical" />
-            
+
             <div className="flex items-center gap-1.5 group relative">
               <div className="absolute -inset-1 bg-purple-400/20 rounded-lg opacity-0 group-hover:opacity-100 blur transition-opacity duration-300" />
               <div className="relative flex items-center gap-1.5 px-2 py-1 bg-white/90 backdrop-blur-sm rounded-lg border border-slate-200/60 group-hover:border-purple-400/80 transition-all duration-300">

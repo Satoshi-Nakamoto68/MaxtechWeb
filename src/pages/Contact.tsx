@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { Mail, MapPin, Phone, Clock, FileText, ShieldCheck, ArrowRight } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Clock,
+  FileText,
+  ShieldCheck,
+  ArrowRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -21,30 +29,33 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative overflow-hidden min-h-screen" style={{
-      background: `linear-gradient(to bottom, 
+    <div
+      className="relative overflow-hidden min-h-screen"
+      style={{
+        background: `linear-gradient(to bottom, 
         rgba(15, 23, 42, 0.98) 0%, 
         rgba(30, 41, 59, 0.98) 50%, 
         rgba(15, 23, 42, 0.98) 100%),
         linear-gradient(to bottom, #0f172a 0%, #1e293b 100%)`,
-      backdropFilter: "blur(16px)",
-    }}>
+        backdropFilter: "blur(16px)",
+      }}
+    >
       {/* Background layers with neon effects */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Animated holographic gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/8 via-blue-600/8 via-purple-600/8 to-pink-600/8 animate-gradient-xy-hero opacity-50" />
-        
+
         <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-cyan-500/12 blur-[120px] animate-float" />
         <div className="absolute top-1/2 left-0 h-96 w-96 rounded-full bg-purple-500/10 blur-[140px] animate-float-delayed" />
         <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-blue-500/8 blur-[100px] animate-orb-float-hero-1" />
-        
+
         {/* Grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(56,189,248,0.1)_1px,transparent_1px)] bg-[length:220px_220px] opacity-30" />
       </div>
-      
+
       {/* Neon border top */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 via-purple-400/50 to-transparent" />
-      
+
       <div className="section-container relative z-10 py-12 lg:py-20">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in select-none cursor-default">
@@ -63,10 +74,10 @@ const Contact = () => {
             <div className="group/contact-info relative rounded-[32px] border border-cyan-400/30 bg-slate-900/90 backdrop-blur-3xl p-8 shadow-[0_30px_100px_rgba(56,189,248,0.3)]">
               {/* Outer glow */}
               <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 rounded-[32px] blur-xl opacity-0 group-hover/contact-info:opacity-100 transition-opacity duration-700" />
-              
+
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5 opacity-0 group-hover/contact-info:opacity-100 transition-opacity duration-500 rounded-[32px]" />
-              
+
               <div className="relative z-10">
                 <h2 className="font-serif text-3xl font-black mb-8 bg-gradient-to-r from-cyan-300 via-white to-purple-300 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(56,189,248,0.3)] select-none">
                   Get in Touch
@@ -74,7 +85,7 @@ const Contact = () => {
 
                 <div className="space-y-6">
                   {/* Registered Address */}
-                  <a 
+                  <a
                     href="https://maps.google.com/?q=Unit+2610,+APEC+Plaza,+49+Hoi+Yuen+Road,+Kwun+Tong,+Hong+Kong"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -84,19 +95,24 @@ const Contact = () => {
                       <MapPin className="h-6 w-6 group-hover/item:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-bold mb-2 text-white group-hover/item:text-emerald-200 transition-colors select-none">Registered Business Address</h3>
+                      <h3 className="font-bold mb-2 text-white group-hover/item:text-emerald-200 transition-colors select-none">
+                        Registered Business Address
+                      </h3>
                       <p className="text-slate-300 group-hover/item:text-emerald-200 transition-colors leading-relaxed select-none">
-                        Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong Kong
+                        Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong
+                        Kong
                       </p>
                       <div className="mt-2 flex items-center gap-2 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
                         <ArrowRight className="h-3 w-3 text-emerald-400" />
-                        <span className="text-xs text-emerald-400">View on Google Maps</span>
+                        <span className="text-xs text-emerald-400">
+                          View on Google Maps
+                        </span>
                       </div>
                     </div>
                   </a>
 
                   {/* Email */}
-                  <a 
+                  <a
                     href="mailto:info@maxtechimport.com"
                     className="group/item flex items-start gap-4 cursor-pointer"
                   >
@@ -104,16 +120,20 @@ const Contact = () => {
                       <Mail className="h-6 w-6 group-hover/item:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-bold mb-2 text-white group-hover/item:text-purple-200 transition-colors select-none">Email</h3>
+                      <h3 className="font-bold mb-2 text-white group-hover/item:text-purple-200 transition-colors select-none">
+                        Email
+                      </h3>
                       <span className="text-slate-300 group-hover/item:text-purple-200 transition-colors inline-flex items-center gap-2 select-none">
-                        <span className="break-all">info@maxtechimport.com</span>
+                        <span className="break-all">
+                          info@maxtechimport.com
+                        </span>
                         <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex-shrink-0" />
                       </span>
                     </div>
                   </a>
 
                   {/* Phone */}
-                  <a 
+                  <a
                     href="tel:+85247485904"
                     className="group/item flex items-start gap-4 cursor-pointer"
                   >
@@ -121,7 +141,9 @@ const Contact = () => {
                       <Phone className="h-6 w-6 group-hover/item:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-bold mb-2 text-white group-hover/item:text-blue-200 transition-colors select-none">Phone</h3>
+                      <h3 className="font-bold mb-2 text-white group-hover/item:text-blue-200 transition-colors select-none">
+                        Phone
+                      </h3>
                       <p className="text-slate-300 group-hover/item:text-blue-200 transition-colors inline-flex items-center gap-2 select-none">
                         <span>+852 47485904</span>
                         <ArrowRight className="h-3 w-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
@@ -135,7 +157,9 @@ const Contact = () => {
                       <Clock className="h-6 w-6 group-hover/item:drop-shadow-[0_0_10px_rgba(236,72,153,0.8)]" />
                     </div>
                     <div>
-                      <h3 className="font-bold mb-2 text-white select-none">Business Hours</h3>
+                      <h3 className="font-bold mb-2 text-white select-none">
+                        Business Hours
+                      </h3>
                       <p className="text-slate-300 select-none">
                         Monday - Friday: 9:00 AM - 6:00 PM HKT
                         <br />
@@ -151,10 +175,10 @@ const Contact = () => {
             <div className="group/company-info relative rounded-[28px] border border-purple-400/30 bg-slate-900/90 backdrop-blur-3xl p-6 shadow-[0_20px_60px_rgba(168,85,247,0.3)]">
               {/* Outer glow */}
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-rose-500/20 rounded-[28px] blur-xl opacity-0 group-hover/company-info:opacity-100 transition-opacity duration-700" />
-              
+
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover/company-info:opacity-100 transition-opacity duration-500 rounded-[28px]" />
-              
+
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-purple-400/30 bg-purple-500/20 text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.3)] group-hover/company-info:scale-110 transition-transform duration-300">
@@ -166,18 +190,28 @@ const Contact = () => {
                 </div>
                 <div className="space-y-3 text-sm">
                   <div className="group/item rounded-2xl border border-purple-400/20 bg-slate-900/80 backdrop-blur-xl p-4 hover:border-purple-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all duration-300">
-                    <p className="text-slate-400 font-bold mb-1 text-xs uppercase tracking-[0.2em] select-none">Company Name</p>
-                    <p className="text-white font-bold select-none">MAXTECH IMPORT AND EXPORT LIMITED</p>
+                    <p className="text-slate-400 font-bold mb-1 text-xs uppercase tracking-[0.2em] select-none">
+                      Company Name
+                    </p>
+                    <p className="text-white font-bold select-none">
+                      MAXTECH IMPORT AND EXPORT LIMITED
+                    </p>
                   </div>
                   <div className="group/item rounded-2xl border border-emerald-400/30 bg-slate-900/80 backdrop-blur-xl p-4 hover:border-emerald-400/50 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-300">
                     <div className="flex items-center gap-2 mb-2">
                       <FileText className="h-4 w-4 text-emerald-400 group-hover/item:drop-shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
-                      <p className="text-slate-400 font-bold text-xs uppercase tracking-[0.2em] select-none">Business Registration Certificate Number</p>
+                      <p className="text-slate-400 font-bold text-xs uppercase tracking-[0.2em] select-none">
+                        Business Registration Certificate Number
+                      </p>
                     </div>
-                    <p className="text-emerald-200 font-bold break-all select-none">79695478-000-01-26-4</p>
+                    <p className="text-emerald-200 font-bold break-all select-none">
+                      79695478
+                    </p>
                   </div>
                   <div className="group/item rounded-2xl border border-purple-400/20 bg-slate-900/80 backdrop-blur-xl p-4 hover:border-purple-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all duration-300">
-                    <p className="text-slate-400 font-bold mb-1 text-xs uppercase tracking-[0.2em] select-none">Established</p>
+                    <p className="text-slate-400 font-bold mb-1 text-xs uppercase tracking-[0.2em] select-none">
+                      Established
+                    </p>
                     <p className="text-white font-bold select-none">2026</p>
                   </div>
                 </div>
@@ -190,10 +224,10 @@ const Contact = () => {
             <div className="group/form relative rounded-[32px] border border-cyan-400/30 bg-slate-900/90 backdrop-blur-3xl p-8 shadow-[0_30px_100px_rgba(56,189,248,0.3)]">
               {/* Outer glow */}
               <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 rounded-[32px] blur-xl opacity-0 group-hover/form:opacity-100 transition-opacity duration-700" />
-              
+
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5 opacity-0 group-hover/form:opacity-100 transition-opacity duration-500 rounded-[32px]" />
-              
+
               <div className="relative z-10">
                 <h2 className="font-serif text-2xl font-black mb-6 bg-gradient-to-r from-cyan-300 via-white to-purple-300 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(56,189,248,0.3)] select-none">
                   Send Us a Message
@@ -201,7 +235,9 @@ const Contact = () => {
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <Label htmlFor="name" className="text-slate-300 font-bold">Full Name *</Label>
+                    <Label htmlFor="name" className="text-slate-300 font-bold">
+                      Full Name *
+                    </Label>
                     <Input
                       id="name"
                       required
@@ -215,7 +251,9 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <Label htmlFor="email" className="text-slate-300 font-bold">Email Address *</Label>
+                    <Label htmlFor="email" className="text-slate-300 font-bold">
+                      Email Address *
+                    </Label>
                     <Input
                       id="email"
                       type="email"
@@ -230,7 +268,12 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <Label htmlFor="subject" className="text-slate-300 font-bold">Subject *</Label>
+                    <Label
+                      htmlFor="subject"
+                      className="text-slate-300 font-bold"
+                    >
+                      Subject *
+                    </Label>
                     <Input
                       id="subject"
                       required
@@ -244,7 +287,12 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <Label htmlFor="message" className="text-slate-300 font-bold">Message *</Label>
+                    <Label
+                      htmlFor="message"
+                      className="text-slate-300 font-bold"
+                    >
+                      Message *
+                    </Label>
                     <Textarea
                       id="message"
                       required
@@ -257,15 +305,17 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    size="lg" 
+                  <Button
+                    type="submit"
+                    size="lg"
                     className="w-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 text-white hover:scale-105 shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:shadow-[0_0_50px_rgba(56,189,248,0.6)] transition-all duration-300 cursor-pointer select-none"
                   >
                     {/* Glow effect */}
                     <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 rounded-lg blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-                    
-                    <span className="relative z-10 pointer-events-none">SEND MESSAGE</span>
+
+                    <span className="relative z-10 pointer-events-none">
+                      SEND MESSAGE
+                    </span>
                   </Button>
 
                   <p className="text-xs text-slate-400 text-center select-none">
@@ -282,10 +332,10 @@ const Contact = () => {
           <div className="group/map relative rounded-[32px] border border-purple-400/30 bg-slate-900/90 backdrop-blur-3xl p-8 shadow-[0_30px_100px_rgba(168,85,247,0.3)]">
             {/* Outer glow */}
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-rose-500/20 rounded-[32px] blur-xl opacity-0 group-hover/map:opacity-100 transition-opacity duration-700" />
-            
+
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover/map:opacity-100 transition-opacity duration-500 rounded-[32px]" />
-            
+
             <div className="relative z-10">
               <div className="flex items-center justify-center gap-3 mb-8">
                 <MapPin className="h-6 w-6 text-purple-400" />
@@ -312,7 +362,9 @@ const Contact = () => {
                   </p>
                   <div className="mt-4 flex items-center gap-2 opacity-0 group-hover/map-link:opacity-100 transition-opacity duration-300">
                     <ArrowRight className="h-4 w-4 text-purple-400" />
-                    <span className="text-sm text-purple-400 font-semibold">Open in Google Maps</span>
+                    <span className="text-sm text-purple-400 font-semibold">
+                      Open in Google Maps
+                    </span>
                   </div>
                 </div>
               </a>
@@ -323,7 +375,10 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="group/link inline-flex items-center gap-2 text-purple-300 hover:text-purple-200 transition-colors duration-300"
                 >
-                  <span className="text-sm font-semibold">Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong Kong</span>
+                  <span className="text-sm font-semibold">
+                    Unit 2610, APEC Plaza, 49 Hoi Yuen Road, Kwun Tong, Hong
+                    Kong
+                  </span>
                   <ArrowRight className="h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
                 </a>
               </div>
@@ -331,7 +386,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      
+
       <style>{`
         @keyframes fade-in {
           0% { opacity: 0; transform: translateY(20px); }
